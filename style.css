@@ -35,6 +35,8 @@ header {
 .nav-section {
     display: flex;
     align-items: center;
+    justify-content: center;
+        padding: 10px 20px;
 }
 
 .nav-section ul {
@@ -52,7 +54,15 @@ header {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #000000;
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+    transform-origin: center;
+}
+
+.nav-section ul li a:hover {
+    transform: scale(1.1);
+    color: #1E4E75;
+    border-bottom: 2px solid #000000;
 }
 
 .burger-menu {
@@ -73,6 +83,7 @@ header {
 .nav-section ul li span{
     transform: rotate(90deg);
     display: inline-block;
+    margin-left: 5px;
 }
 
 .logo-section section h1{
@@ -128,6 +139,12 @@ main {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.content-text a:hover {
+    background-color: #2563EB;
+    transform: scale(1.05);
 }
 
 .content-text p {
@@ -264,6 +281,12 @@ main {
     height: 280px;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .card div {
@@ -286,15 +309,20 @@ main {
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: red;
+    background-color: #ff0000;
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.card-button:hover {
+    background-color: #eb0606;
+    transform: scale(1.05);
+}
 
 .alur-laporan {
     display: flex;
