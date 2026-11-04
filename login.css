@@ -83,6 +83,7 @@ body {
     gap: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     transition: all 0.25s ease;
+    border-radius: 50px;
 }
 
 .input-group iconify-icon {
