@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polije Siaga</title>
+    <link rel="stylesheet" href="detailbaranghilang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="img/logoPolijeSiaga.png" alt="Polije Siaga Logo" class="logo">
+            <div>
+                <h1>Polije Siaga</h1>
+                <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="nav-layanan active">
+                    <a href="javascript:void(0)" class="layanan-toggle">
+                        <span>Layanan Keamanan</span>
+                        <iconify-icon icon="lucide:chevron-down" class="arrow-icon"></iconify-icon>
+                    </a>
+                    <div class="layanan-keamanan-pop-up">
+                        <a href="barangHilang.html">
+                            <iconify-icon icon="solar:bag-cross-linear"></iconify-icon>
+                            <span>Barang Hilang</span>
+                        </a>
+                        <a href="barangTemukan.html">
+                            <iconify-icon icon="solar:bag-check-linear"></iconify-icon>
+                            <span>Barang Ditemukan</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="#">Pengumuman</a></li>
+                <li><a href="#">Kontak Darurat</a></li>
+            </ul>
+            <div class="humberger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="detail-barang-hilang">
+            <div class="headers-judul">
+                <h2>Detail Barang Hilang</h2>
+                <div></div>
+            </div>
+            <p class="description">Laporkan barang yang ditemukan atau kehilangan barang di lingkungan kampus dengan mudah melalui Polije Siaga.</p>
+            
+            <div class="detail-barang">
+
+                <img src="img/dompet.png" alt="Barang Hilang">
+
+                <div class="detail-content">
+
+                    <div class="informasi">
+                        <h4>
+                            <iconify-icon icon="andrsrxn:warning-circle"></iconify-icon>
+                            Informasi Barang
+                        </h4>
+
+                        <table>
+                            <tr>
+                                <td>Nama Barang</td>
+                                <td>:</td>
+                                <td>Dompet Kulit</td>
+                            </tr>
+                            <tr>
+                                <td>Lokasi Terakhir Dilihat</td>
+                                <td>:</td>
+                                <td>G.JTI lantai 2</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal & Waktu Kehilangan</td>
+                                <td>:</td>
+                                <td>29-Oktober-2026</td>
+                            </tr>
+                            <tr>
+                                <td>Pelapor</td>
+                                <td>:</td>
+                                <td>Ahmad Rafi</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="status-box">
+                        <h4>
+                            <iconify-icon icon="material-symbols:info-outline-rounded"></iconify-icon>
+                            Status Barang
+                        </h4>
+
+                        <p class="status">
+                            Status: <span>Belum Ditemukan</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <section class="header-logo-footer">
+            <div class="header-logo-footer-content">
+                <img src="img/logoPolijeSiaga.png" alt="Polije Siaga Logo" class="logo">
+                <div>
+                    <h1>Polije Siaga</h1>
+                    <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+                </div>
+            </div>
+            <p class="copyright">Copyright Polije Siaga@2026 - All Right Reserved by Brazil Cabang Jember</p>
+        </section>
+        <section class="footer-kontak">
+            <p><iconify-icon icon="akar-icons:phone"></iconify-icon><span>Contact:</span> 08123456789 (Admin)</p>
+            <p><iconify-icon icon="carbon:email"></iconify-icon><span>Email:</span> security@polijesiaga.com</p>
+        </section>
+        <section class="footer-navigation">
+            <a href="#">Beranda</a>
+            <a href="#">Layanan Keamanan</a>
+            <a href="#">Pengumuman</a>
+            <a href="#">Kontak Darurat</a>
+        </section>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('main section');
+
+        const navLayanan = document.querySelector('.nav-layanan');
+        const layananToggle = document.querySelector('.layanan-toggle');
+        const layananPopUp = document.querySelector('.layanan-keamanan-pop-up');
+
+        if (layananToggle && layananPopUp) {
+            layananToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                layananPopUp.classList.toggle('show');
+                if (navLayanan) {
+                    navLayanan.classList.toggle('show');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!layananPopUp.contains(event.target) && !layananToggle.contains(event.target)) {
+                    layananPopUp.classList.remove('show');
+                    if (navLayanan) {
+                        navLayanan.classList.remove('show');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
