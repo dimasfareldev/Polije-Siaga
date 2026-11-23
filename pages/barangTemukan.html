@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polije Siaga</title>
-    <link rel="stylesheet" href="barangHilang.css" />
+    <link rel="stylesheet" href="../css/barangTemukan.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
@@ -18,7 +18,7 @@
     <header>
       <div class="header-logo">
         <img
-          src="img/logoPolijeSiaga.png"
+          src="../img/logo-polije-siaga.webp"
           alt="Polije Siaga Logo"
           class="logo"
         />
@@ -29,7 +29,7 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="../index.html">Beranda</a></li>
           <li class="nav-layanan active">
             <a href="javascript:void(0)" class="layanan-toggle">
               <span>Layanan Keamanan</span>
@@ -61,57 +61,63 @@
     </header>
     <main>
       <section class="barang-hilang">
-        <h2>Pelaporan Barang Hilang</h2>
+        <h2>Penemuan Barang Hilang</h2>
         <p>
-          Silakan isi formulir berikut dengan informasi yang lengkap dan jelas
-          mengenai barang yang hilang. Laporan akan diteruskan kepada petugas
-          security Politeknik Negeri Jember untuk membantu proses pencarian dan
-          penanganan lebih lanjut.
+          Temukan informasi barang-barang yang telah ditemukan di lingkungan
+          Politeknik Negeri Jember. Periksa daftar barang berikut, siapa tahu
+          barang yang kamu cari sudah ditemukan dan diamankan oleh petugas
+          security.
         </p>
-        <a href="formLaporanKehilangan.html"
-          >Laporkan Barang Hilang
-          <iconify-icon icon="bi:arrow-right-circle"></iconify-icon>
-        </a>
       </section>
       <section class="list-barang-hilang">
         <div class="list-barang-hilang-header">
           <div class="underline kiri"></div>
-          <h2 class="list-barang-hilang-title">DAFTAR BARANG HILANG</h2>
+          <h2 class="list-barang-hilang-title">Barang Ditemukan</h2>
           <div class="underline kanan"></div>
         </div>
         <p>
-          Laporkan barang yang ditemukan atau kehilangan barang di lingkungan
-          kampus dengan mudah melalui Polije Siaga.
+          Berikut adalah barang-barang yang telah ditemukan dan diamankan oleh
+          petugas security Polije.
         </p>
         <div class="daftar-barang">
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="img/dompet.png" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="img/dompet.png" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="img/dompet.png" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="img/dompet.png" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
+          <table class="table-barang-hilang">
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Nama Barang</th>
+              <th>Lokasi</th>
+              <th>Pelapor</th>
+              <th>Status</th>
+              <th>Detail</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2024-06-01</td>
+              <td>Dompet</td>
+              <td>Gedung A</td>
+              <td>John Doe</td>
+              <td><span class="status">Selesai</span></td>
+              <td><a href="#" class="btnDetail">Lihat Detail</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2024-06-01</td>
+              <td>Handphone</td>
+              <td>Gedung B</td>
+              <td>Gedung B</td>
+              <td><span class="status">Belum Selesai</span></td>
+              <td><a href="#" class="btnDetail">Lihat Detail</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>2024-06-20</td>
+              <td>Kacamata</td>
+              <td>Gedung C</td>
+              <td>Alice</td>
+              <td><span class="status">Dalam Proses</span></td>
+              <td><a href="#" class="btnDetail">Lihat Detail</a></td>
+            </tr>
+          </table>
         </div>
       </section>
     </main>
@@ -119,7 +125,7 @@
       <section class="header-logo-footer">
         <div class="header-logo-footer-content">
           <img
-            src="img/logoPolijeSiaga.png"
+            src="../img/logo-polije-siaga.webp"
             alt="Polije Siaga Logo"
             class="logo"
           />
@@ -195,6 +201,18 @@
           }
         });
       }
+
+      const status = document.querySelectorAll(".status");
+
+      status.forEach((status) => {
+        if (status.textContent === "Selesai") {
+          status.style.background = "#91FD91";
+        } else if (status.textContent === "Dalam Proses") {
+          status.style.background = "#D7B314";
+        } else if (status.textContent === "Belum Selesai") {
+          status.style.background = "#FF9999";
+        }
+      });
     </script>
   </body>
 </html>

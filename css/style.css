@@ -116,7 +116,7 @@ nav ul li:active {
             rgba(5, 54, 100, 0.85) 82%,
             rgba(3, 23, 53, 0.95) 100%
         ),
-        url('img/paraSatpam.png');
+        url('../img/paraSatpam.webp');
 
     background-size: cover;
     background-position: center;
