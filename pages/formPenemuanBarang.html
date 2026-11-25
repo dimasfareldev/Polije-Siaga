@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polije Siaga</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="../css/formPenemuanBarang.css">
+</head>
+<body>
+    <!-- Navbar Header -->
+    <header>
+        <div class="header-logo">
+            <img src="../img/logo-polije-siaga.webp" alt="Polije Siaga Logo" class="logo">
+            <div>
+                <h1>POLIJE SIAGA</h1>
+                <p>Sistem Informasi Keamanan dan Penjagaan Polije</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li class="nav-layanan active">
+                    <a href="javascript:void(0)" class="layanan-toggle">
+                        <span>Layanan Keamanan</span>
+                        <iconify-icon icon="lucide:chevron-down" class="arrow-icon"></iconify-icon>
+                    </a>
+                    <div class="layanan-keamanan-pop-up">
+                        <a href="barangHilang.html">
+                            <iconify-icon icon="solar:bag-cross-linear"></iconify-icon>
+                            <span>Barang Hilang</span>
+                        </a>
+                        <a href="barangTemukan.html">
+                            <iconify-icon icon="solar:bag-check-linear"></iconify-icon>
+                            <span>Barang Ditemukan</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="#">Pengumuman</a></li>
+                <li><a href="#">Kontak Darurat</a></li>
+            </ul>
+            <div class="humberger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-laporan">
+            <div class="hero-content">
+                <div class="headerh1">
+                    <h1>
+                        Pengambilan Barang Ditemukan
+                    </h1>
+                    <div class="header-underline"></div>
+                </div>
+                <div class="hero-quote">
+                    <p>"Silakan isi formulir pengambilan barang dengan lengkap dan benar. Petugas Security Polije akan melakukan verifikasi sebelum barang diserahkan kepada pemilik"</p>
+                </div>
+            </div>
+
+            <div class="line-langkah">
+                <h3 class="langkah-header">
+                    <iconify-icon icon="mingcute:shoe-line" width="36" height="36" class="cloud-icon"></iconify-icon>
+                    Langkah-Langkah Pengajuan
+                </h3>
+                <div class="langkah-langkah">
+                <div class="line"></div>
+                <div class="langkah">
+                    <div class="langkah-1">
+                        <h3>1</h3>
+                        <iconify-icon icon="ant-design:form-outlined" width="36" height="36" class="cloud-icon"></iconify-icon>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi data diri dan informasi barang.</p>
+                    </div>
+                    <div class="langkah-1">
+                        <h3>1</h3>
+                        <iconify-icon icon="ant-design:form-outlined" width="36" height="36" class="cloud-icon"></iconify-icon>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi data diri dan informasi barang.</p>
+                    </div>
+                    <div class="langkah-1">
+                        <h3>1</h3>
+                        <iconify-icon icon="ant-design:form-outlined" width="36" height="36" class="cloud-icon"></iconify-icon>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi data diri dan informasi barang.</p>
+                    </div>
+                    <div class="langkah-1">
+                        <h3>1</h3>
+                        <iconify-icon icon="ant-design:form-outlined" width="36" height="36" class="cloud-icon"></iconify-icon>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi data diri dan informasi barang.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Section Formulir Pelaporan -->
+        <section class="form-section">
+            <div class="form-header">
+                <div class="header-line"></div>
+                <h2>Buat Laporan Kehilangan</h2>
+                <div class="header-line"></div>
+            </div>
+            <p class="form-subtitle">"Silakan lengkapi formulir berikut dengan informasi barang yang ditemukan di lingkungan Politeknik Negeri Jember. Informasi yang diberikan akan membantu petugas security dalam mengamankan dan mengembalikan barang kepada pemiliknya."</p>
+
+            <!-- Card Container Putih -->
+            <div class="form-card">
+                <form action="#" method="POST" enctype="multipart/form-data" class="report-form">
+                    <!-- Kolom Kiri: Input Fields -->
+                    <div class="form-inputs">
+                        <div class="input-field">
+                            <label for="nama-barang">Nama Barang</label>
+                            <input type="text" id="nama-barang" name="nama_barang" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ciri-barang">Ciri-ciri Barang</label>
+                            <input type="text" id="ciri-barang" name="ciri_barang" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="lokasi-terakhir">Lokasi Terakhir Terlihat</label>
+                            <input type="text" id="lokasi-terakhir" name="lokasi_terakhir" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="tanggal-kehilangan">Tanggal & Waktu Kehilangan</label>
+                            <input type="text" id="tanggal-kehilangan" name="tanggal_kehilangan" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="nama-pelapor">Nama Pelapor</label>
+                            <input type="text" id="nama-pelapor" name="nama_pelapor" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="kontak-pelapor">No Handphone / Email</label>
+                            <input type="text" id="kontak-pelapor" name="kontak_pelapor" required>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Upload Foto & Tombol Kirim -->
+                    <div class="form-upload-side">
+                        <div class="upload-box" id="uploadBox">
+                            <input type="file" id="fileInput" name="foto_barang" accept="image/*" class="file-hidden">
+                            <div class="upload-content">
+                                <iconify-icon icon="lucide:cloud-upload" width="36" height="36" class="cloud-icon"></iconify-icon>
+                                <span class="upload-title">Unggah Foto</span>
+                                <span class="upload-hint">(opsional tapi membantu)</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-kirim">Kirim Laporan</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="header-logo-footer">
+            <div class="header-logo-footer-content">
+                <img src="../img/logo-polije-siaga.webp" alt="Polije Siaga Logo" class="logo">
+                <div>
+                    <h1>Polije Siaga</h1>
+                    <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+                </div>
+            </div>
+            <p class="copyright">Copyright Polije Siaga@2026 - All Right Reserved by Brazil Cabang Jember</p>
+        </section>
+        <section class="footer-kontak">
+            <p><iconify-icon icon="akar-icons:phone"></iconify-icon><span>Contact:</span> 08123456789 (Admin)</p>
+            <p><iconify-icon icon="carbon:email"></iconify-icon><span>Email:</span> security@polijesiaga.com</p>
+        </section>
+        <section class="footer-navigation">
+            <a href="#">Beranda</a>
+            <a href="#">Layanan Keamanan</a>
+            <a href="#">Pengumuman</a>
+            <a href="#">Kontak Darurat</a>
+        </section>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const navLayanan = document.querySelector('.nav-layanan');
+        const layananToggle = document.querySelector('.layanan-toggle');
+        const layananPopUp = document.querySelector('.layanan-keamanan-pop-up');
+
+        if (layananToggle && layananPopUp) {
+            layananToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                layananPopUp.classList.toggle('show');
+                if (navLayanan) {
+                    navLayanan.classList.toggle('show');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!layananPopUp.contains(event.target) && !layananToggle.contains(event.target)) {
+                    layananPopUp.classList.remove('show');
+                    if (navLayanan) {
+                        navLayanan.classList.remove('show');
+                    }
+                }
+            });
+        }
+
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+        uploadBox.addEventListener('click', () => fileInput.click());
+    </script>
+</body>
+</html>

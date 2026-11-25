@@ -1,221 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polije Siaga</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
     <header>
-        <section class="logo-section">
-            <img src="img/logoPolijeSiaga.png" alt="Polije Siaga Logo" class="logo">
-            <section>
-                <h1>Polije Siaga</h1>
-                <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
-            </section>
-        </section>
-        <section class="nav-section">
-            <ul>
-                <li><a href="#" class="active">Beranda</a></li>
-                <li><a href="#">Layanan Keamanan <span>></span></a></li>
-                <li><a href="#">Pengumuman</a></li>
-                <li><a href="#">Kontak Darurat</a></li>
-            </ul>
-        </section>
-        <section class="burger-menu">
-            <span class="user-icon"></span>
-            <span class="user-icon"></span>
-            <span class="user-icon"></span>
-        </section>
+      <div class="header-logo">
+        <img
+          src="img/logo-polije-siaga.webp"
+          alt="Polije Siaga Logo"
+          class="logo"
+        />
+        <div>
+          <h1>Polije Siaga</h1>
+          <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Beranda</a></li>
+          <li class="nav-layanan">
+            <a href="javascript:void(0)" class="layanan-toggle">
+              <span>Layanan Keamanan</span>
+              <iconify-icon icon="lucide:chevron-down" class="arrow-icon"></iconify-icon>
+            </a>
+            <div class="layanan-keamanan-pop-up">
+              <a href="pages/barangHilang.html">
+                <iconify-icon icon="solar:bag-cross-linear"></iconify-icon>
+                <span>Barang Hilang</span>
+              </a>
+              <a href="pages/barangTemukan.html">
+                <iconify-icon icon="solar:bag-check-linear"></iconify-icon>
+                <span>Barang Ditemukan</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="#">Pengumuman</a></li>
+          <li><a href="#">Kontak Darurat</a></li>
+        </ul>
+        <div class="humberger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
     </header>
     <main>
-        <div class="kotak kotak-atas-kiri"></div>
-        <div class="kotak kotak-bawah-kiri"></div>
-        <div class="kotak kotak-atas-kanan"></div>
-        <div class="kotak kotak-bawah-kanan"></div>
-
-       <section class="content">
-        <div class="content-text">
-            <h2>Selamat Datang di POLIJE SIAGA</h2>
-            <p>Polije Siaga hadir sebagai pusat informasi keamanan kampus yang memudahkan civitas akademika dalam melaporkan barang hilang, menemukan barang yang telah dilaporkan, mendapatkan informasi terkait kondisi keamanan kampus, serta mengakses kontak darurat.</p>
-            <a href="#">Tentang Polije Siaga <iconify-icon icon="bi:arrow-right-circle" width="20" height="20"></iconify-icon></a>
-        </div>
-        <div class="content-image">
-            <div class="bulat bulat-1"></div>
-            <div class="bulat bulat-2"></div>
-            <div class="bulat bulat-3"></div>
-            <img src="img/satpamPolije.png" alt="Ilustrasi Polije Siaga">
-            <div class="content-image-text">
-                <h3>Satpam Polije</h3>
+      <section class="beranda">
+        <div class="beranda-details">
+          <div class="berandaInformation">
+            <h2>
+              Selamat Datang di
+              <br />
+              POLIJE SIAGA
+            </h2>
+            <p>
+              Polije Siaga hadir sebagai pusat informasi keamanan kampus yang
+              memudahkan civitas akademika dalam melaporkan barang hilang,
+              menemukan barang yang telah dilaporkan, mendapatkan informasi
+              terkait kondisi keamanan kampus, serta mengakses kontak darurat.
+            </p>
+            <button>
+              Tentang Polije Siaga
+              <iconify-icon icon="bi:arrow-right-circle"></iconify-icon>
+            </button>
+          </div>
+          <div class="beranda-image">
+            <div class="oval one"></div>
+            <div class="oval two"></div>
+            <div class="oval three"></div>
+            <div class="container-image">
+              <img src="img/satpam-polije.webp" alt="Para Satpam" />
+              <span>Satpam Polije</span>
             </div>
+          </div>
         </div>
-       </section>
-    </main>
-    <section class="layanan-keamanan">
-            <div class="content-2-text">
-                <h2>Layanan Keamanan</h2>
-                <p>Laporkan barang yang ditemukan atau kehilangan barang di lingkungan</p>
-                <p>kampus dengan mudah melalui Polije Siaga.</p>
-            </div>
-            <div class="content-2-cards">
-                <div class="card">
-                    <img src="img/mencariBarang.png" alt="Barang Hilang">
-                    <div>
-                        <h3>Menemukan barang yang tertinggal?</h3>
-                        <p>Laporkan barang temuanmu agar dapat segera diamankan dan dikembalikan kepada pemiliknya.</p>
-                        <button class="card-button">Laporkan</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/mencariBarang2.png" alt="Barang Hilang">
-                    <div>
-                        <h3>Kehilangan barang di lingkungan kampus?</h3>
-                        <p>Laporkan barang yang hilang dengan mengisi informasi secara lengkap agar lebih mudah ditemukan.</p>
-                        <button class="card-button">Laporkan</button>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="alur-laporan">
-        <div class="kotak kotak-atas-kiri"></div>
-        <div class="kotak kotak-bawah-kiri"></div>
-        <div class="kotak kotak-atas-kanan"></div>
-        <div class="kotak kotak-bawah-kanan"></div>
-
-       <section class="content-information">
-        <div class="content-text">
-            <h2>Alur Pelaporan & Pengambilan</h2>
-            <p>Tiga langkah untuk mengurus barang temuan atau kehilangan di kampus polije</p>
+      </section>
+      <section class="layanan-keamanan">
+        <div class="layanan-keamanan-header">
+          <div class="underline"></div>
+          <h2 class="layanan-keamanan-title">LAYANAN KEAMANAN</h2>
+          <div class="underline"></div>
         </div>
+        <p class="p">
+          Laporkan barang yang ditemukan atau kehilangan barang di lingkungan
+          kampus dengan mudah melalui Polije Siaga.
+        </p>
+        <div class="layanan-card">
+          <div class="border-left">
+            <div class="layanan-card-item">
+              <img src="img/mencari-barang-1.webp" alt="Mencari Barang" />
+              <div class="card-information">
+                <h3>Menemukan barang yang tertinggal ?</h3>
+                <p>
+                  Laporkan barang temuanmu agar dapat segera diamankan dan
+                  dikembalikan kepada pemiliknya.
+                </p>
+                <button>Laporkan</button>
+              </div>
+            </div>
+          </div>
+          <div class="border-left">
+            <div class="layanan-card-item">
+              <img src="img/mencari-barang-2.webp" alt="Mencari Barang" />
+              <div class="card-information">
+                <h3>Menemukan barang yang tertinggal ?</h3>
+                <p>
+                  Laporkan barang temuanmu agar dapat segera diamankan dan
+                  dikembalikan kepada pemiliknya.
+                </p>
+                <button>Laporkan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="alur-pelaporan">
+        <div class="layanan-keamanan-header">
+          <div class="underline"></div>
+          <h2 class="layanan-keamanan-title">ALUR PELAPORAN</h2>
+          <div class="underline"></div>
+        </div>
+        <p class="p">
+          Tiga langkah untuk mengurus barang temuan atau kehilangan di kampus
+          polije
+        </p>
         <div class="card-alur">
-            <div class="card-information">
-                <h2>1</h2>
-                <h3>Isi formulir online</h3>
-                <p>Laporan detail spesifik barang (warna, ciri khusus, lokasi terakhir, waktu kejadian) melalui form portal Polije SIaga</p>
-            </div>
-            <div class="card-information">
-                <h2>2</h2>
-                <h3>Verifikasi petugas posko</h3>
-                <p>Tim satpam polije akan mencocokkan data laporan dengan database fisik barang yang tersimpan di posko keamanan</p>
-            </div>
-            <div class="card-information">
-                <h2>3</h2>
-                <h3>Isi formulir online</h3>
-                <p>Laporan detail spesifik barang (warna, ciri khusus, lokasi terakhir, waktu kejadian) melalui form portal Polije SIaga</p>
-            </div>
+          <div class="alur-item" data-aos="fade-up-right">
+            <h3>1</h3>
+            <p>
+              Laporan detail spesifik barang (warna, ciri khusus, lokasi
+              terakhir, waktu kejadian) melalui form portal Polije Siaga
+            </p>
+          </div>
+          <div class="alur-item" data-aos="zoom-in-up">
+            <h3>2</h3>
+            <p>
+              Tim satpam polije akan mencocokkan data laporan dengan database
+              fisik barang yang tersimpan di posko keamanan
+            </p>
+          </div>
+          <div class="alur-item" data-aos="fade-left">
+            <h3>3</h3>
+            <p>
+              Laporan detail spesifik barang (warna, ciri khusus, lokasi
+              terakhir, waktu kejadian) melalui form portal Polije Siaga
+            </p>
+          </div>
         </div>
-       </section>
-    </section>
-    <section class="laporan">
-        <div class="laporan-text">
-            <div class="information">
-                <p class="update"><span></span> Update Terkini</p>
-                <h2>Daftar Laporan Barang Hilang & Temuan</h2>
-                <p>Pantau status barang hilang yang sedang dicari dan barang temuan yang telah diamankan di Posko Satpam Polije.</p>
-                <div>
-                    <button>Semua (24)</button>
-                    <button><span class="merah"></span>Barang Hilang (Dicari)</button>
-                    <button><span class="hijau"></span>Barang Temuan (Diamankan)</button>
-                </div>
-            </div>
-            <div class="search-bar">
-                <iconify-icon icon="material-symbols:search-rounded" width="20" height="20"></iconify-icon>
-                <input type="text" placeholder="Cari barang atau lokasi...">
-            </div>
+      </section>
+      <section class="daftar-barang">
+        <p class="update"><span></span> Update Terkini</p>
+        <div class="headers-judul">
+          <h2>Daftar Laporan Barang Hilang & Temuan</h2>
+          <div></div>
         </div>
-        <div class="laporan-cards">
-            <div class="card-laporan">
-                <img src="img/dompet.png" alt="Barang Hilang">
-                <div class="card-detail-container">
-                    <div class="card-detail-1">
-                        <h3>Dompet Kulit Coklat</h3>
-                        <p>Barang hilang di area parkir kampus Polije pada tanggal 10 Juni 2023 pukul 14.30 WIB.</p>
-                    </div>
-                    <div class="card-detail">
-                        <p><iconify-icon icon="lucide:map-pin" width="18" height="18"></iconify-icon>Parkir Barat Kampus 1</p>
-                        <p><iconify-icon icon="lucide:clock" width="18" height="18"></iconify-icon> 24 Okt 2024, 08:30 WIB</p>
-                        <p><iconify-icon icon="lucide:user" width="18" height="18"></iconify-icon> Ditemukan: Petugas Kebersihan</p>
-                    </div>
-                <button class="button button-merah">Klaim di Pos 1 <iconify-icon icon="lucide:chevron-right" width="18" height="18"></iconify-icon></button>
-                </div>
-            </div>
-            <div class="card-laporan">
-                <img src="img/kunciMotor.png" alt="Barang Hilang">
-                <div class="card-detail-container">
-                    <div class="card-detail-1">
-                        <h3>Kunci Motor Honda Vario</h3>
-                        <p>Gantungan karet motif pita merah dengan remote alarm bawaan Honda.</p>
-                    </div>
-                    <div class="card-detail">
-                        <p><iconify-icon icon="lucide:map-pin" width="18" height="18"></iconify-icon> Parkir Barat Kampus 1</p>
-                        <p><iconify-icon icon="lucide:clock" width="18" height="18"></iconify-icon> 24 Okt 2024, 08:30 WIB</p>
-                        <p><iconify-icon icon="lucide:user" width="18" height="18"></iconify-icon> Ditemukan: Petugas Kebersihan</p>
-                    </div>
-                <button class="button button-hijau">Klaim di Pos 1 <iconify-icon icon="lucide:chevron-right" width="18" height="18"></iconify-icon></button>
-                </div>
-            </div>
-            <div class="card-laporan">
-                <img src="img/Laptop.png" alt="Barang Hilang">
-                <div class="card-detail-container">
-                    <div class="card-detail-1">
-                        <h3>Laptop Acer </h3>
-                        <p>Laptop merk acer berwarna silver.</p>
-                    </div>
-                    <div class="card-detail">
-                        <p><iconify-icon icon="lucide:map-pin" width="18" height="18"></iconify-icon> Parkir Barat Kampus 1</p>
-                        <p><iconify-icon icon="lucide:clock" width="18" height="18"></iconify-icon> 24 Okt 2024, 08:30 WIB</p>
-                        <p><iconify-icon icon="lucide:user" width="18" height="18"></iconify-icon> Ditemukan: Petugas Kebersihan</p>
-                    </div>
-                <button class="button button-merah">Klaim di Pos 1 <iconify-icon icon="lucide:chevron-right" width="18" height="18"></iconify-icon></button>
-                </div>
-            </div>
-            <div class="card-laporan">
-                <img src="img/flaskdisk.png" alt="Barang Hilang">
-                <div class="card-detail-container">
-                    <div class="card-detail-1">
-                        <h3>Flashdisk 16 GB</h3>
-                        <p>Flashdisk ukuran 16 GB dengan kabel berwarna silver.</p>
-                    </div>
-                    <div class="card-detail">
-                        <p><iconify-icon icon="lucide:map-pin" width="18" height="18"></iconify-icon> Parkir Barat Kampus 1</p>
-                        <p><iconify-icon icon="lucide:clock" width="18" height="18"></iconify-icon> 24 Okt 2024, 08:30 WIB</p>
-                        <p><iconify-icon icon="lucide:user" width="18" height="18"></iconify-icon> Ditemukan: Petugas Kebersihan</p>
-                    </div>
-                <button class="button button-hijau">Klaim di Pos 1 <iconify-icon icon="lucide:chevron-right" width="18" height="18"></iconify-icon></button>
-                </div>
-            </div>
+        <div class="headers-deskripsi">
+          <p>
+            Pantau status barang hilang yang sedang dicari dan barang temuan
+            yang telah diamankan di Posko Satpam Polije.
+          </p>
+          <div class="search-box">
+            <iconify-icon
+              icon="akar-icons:search"
+              width="18"
+              height="18"
+            ></iconify-icon>
+            <input type="text" placeholder="Cari nama barang atau lokasi..." />
+          </div>
         </div>
-    </section>
+        <div class="headers-filter">
+          <button type="button" class="button-filter">Semua (24)</button>
+          <button type="button" class="button-filter red">
+            <span></span> Barang Hilang (Dicari)
+          </button>
+          <button type="button" class="button-filter green">
+            <span></span> Barang Temuan (Diamankan)
+          </button>
+        </div>
+        <div class="card-barang">
+          <div class="card-item">
+            <img src="img/dompet.webp" alt="Gambar Barang" />
+            <div class="card-item-details">
+              <h3>Dompet Kulit</h3>
+              <p class="card-item-details-description">
+                Dompet kulit berwarna coklat pekat dengan merk dunhill.
+              </p>
+              <p>
+                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
+                Barat Kampus
+              </p>
+              <p>
+                <time datetime="2024-10-24T08:55:00Z"
+                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
+                  2024, 08:55 WIB</time
+                >
+              </p>
+              <p>
+                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
+                Petugas Kebersihan
+              </p>
+              <a href="#" class="button-daftar-barang red">Klaim di Pos 1</a>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="img/kunci-motor.webp" alt="Gambar Barang" />
+            <div class="card-item-details">
+              <h3>Kunci Motor Honda Vario</h3>
+              <p class="card-item-details-description">
+                Gantungan karet motif pita merah dengan remote alarm bawaan
+                Honda.
+              </p>
+              <p>
+                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
+                Barat Kampus
+              </p>
+              <p>
+                <time datetime="2024-10-24T08:55:00Z"
+                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
+                  2024, 08:55 WIB</time
+                >
+              </p>
+              <p>
+                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
+                Petugas Kebersihan
+              </p>
+              <a href="#" class="button-daftar-barang green">Klaim di Pos 1</a>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="img/laptop.webp" alt="Gambar Barang" />
+            <div class="card-item-details">
+              <h3>Laptop Acer</h3>
+              <p class="card-item-details-description">
+                Laptop merk acer berwarna silver.
+              </p>
+              <p>
+                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
+                Barat Kampus
+              </p>
+              <p>
+                <time datetime="2024-10-24T08:55:00Z"
+                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
+                  2024, 08:55 WIB</time
+                >
+              </p>
+              <p>
+                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
+                Petugas Kebersihan
+              </p>
+              <a href="#" class="button-daftar-barang red">Klaim di Pos 1</a>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="img/flashdisk.webp" alt="Gambar Barang" />
+            <div class="card-item-details">
+              <h3>Flashdisk 16 GB</h3>
+              <p class="card-item-details-description">
+                Flashdisk ukuran 16 GB dengan kabel berwarna silver.
+              </p>
+              <p>
+                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
+                Barat Kampus
+              </p>
+              <p>
+                <time datetime="2024-10-24T08:55:00Z"
+                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
+                  2024, 08:55 WIB</time
+                >
+              </p>
+              <p>
+                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
+                Petugas Kebersihan
+              </p>
+              <a href="#" class="button-daftar-barang green">Klaim di Pos 1</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer>
-        <section>
-            <div class="polije-footer">
-                <img src="img/logoPolijeSiaga.png" alt="Logo Polije Siaga">
-                <div>
-                    <h2>Polije Siaga</h2>
-                    <p>Sistem Informasi Keamanan dan Penjagaan Polije</p>
-                </div>
-            </div>
-            <div class="footer-kontak">
-                <h2>Kontak pos Utama</h2>
-                <p>No. Darurat: 0812-3456-7890 (WA/Telp)</p>
-                <p>Email: security@polije.ac.id</p>
-                <p>Jam Operasional: 08.00-16.00</p>
-            </div>
-            <div class="tautan-cepat">
-                <h2>Tautan Cepat</h2>
-                <a href="#">Laporkan Hilang</a>
-                <a href="#">Laporkan Temuan</a>
-                <a href="#">Daftar Barang Ditemukan</a>
-                <a href="#">Riwayat Laporan</a>
-            </div>
-        </section>
-        <p>&copy; 2026 Politeknik Negeri Jember All Rights Reserved</p>
+      <section class="header-logo-footer">
+        <div class="header-logo-footer-content">
+          <img
+            src="img/logo-polije-siaga.webp"
+            alt="Polije Siaga Logo"
+            class="logo"
+          />
+          <div>
+            <h1>Polije Siaga</h1>
+            <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+          </div>
+        </div>
+        <p class="copyright">
+          Copyright Polije Siaga@2026 - All Right Reserved by Brazil Cabang
+          Jember
+        </p>
+      </section>
+      <section class="footer-kontak">
+        <p>
+          <iconify-icon icon="akar-icons:phone"></iconify-icon
+          ><span>Contact:</span> 08123456789 (Admin)
+        </p>
+        <p>
+          <iconify-icon icon="carbon:email"></iconify-icon
+          ><span>Email:</span> security@polijesiaga.com
+        </p>
+      </section>
+      <section class="footer-navigation">
+        <a href="#">Beranda</a>
+        <a href="#">Layanan Keamanan</a>
+        <a href="#">Pengumuman</a>
+        <a href="#">Kontak Darurat</a>
+      </section>
     </footer>
-</body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      const navLinks = document.querySelectorAll("nav ul li a");
+      const sections = document.querySelectorAll("main section");
+
+      const navLayanan = document.querySelector(".nav-layanan");
+      const layananToggle = document.querySelector(".layanan-toggle");
+      const layananPopUp = document.querySelector(".layanan-keamanan-pop-up");
+
+      if (layananToggle && layananPopUp) {
+        layananToggle.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          layananPopUp.classList.toggle("show");
+          if (navLayanan) {
+            navLayanan.classList.toggle("show");
+          }
+        });
+
+        document.addEventListener("click", function (event) {
+          if (!layananPopUp.contains(event.target) && !layananToggle.contains(event.target)) {
+            layananPopUp.classList.remove("show");
+            if (navLayanan) {
+              navLayanan.classList.remove("show");
+            }
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

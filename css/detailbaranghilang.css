@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid #FFFFFF; */
+}
+
+body {
+    background-color: #031735;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: transparent;
+    padding: 10px 50px;
+    border-bottom: 1px solid #FFFFFF;
+    z-index: 1000;
+    transition: background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #031735;
+    border-bottom: 1px solid #031735;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 2.5);
+    backdrop-filter: blur(10px);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    width: 40px;
+}
+
+.header-logo div h1{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.header-logo div p {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.humberger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    transition: border-bottom 0.3s ease, transform 0.2s ease;
+    
+}
+
+nav ul li:hover {
+    transform: translateY(-2px);
+    border-bottom: 2px solid #FFFFFF;
+}
+
+nav ul li:active {
+    transform: translateY(2px);
+}
+
+.detail-barang-hilang {
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #031735, #053664, #075697, #053664, #031735);
+    margin-bottom: 79px;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headers-judul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headers-judul h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 60px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.headers-judul div {
+    width: 620px;
+    height: 1px;
+    background-color: #FFFFFF;
+}
+
+.description {
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: 900px;
+    padding-left: 20px;
+    border-left: 3px solid #FFFFFF;
+    margin-bottom: 90px;
+}
+
+
+.detail-barang {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.detail-barang > img {
+    width: 180px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.informasi {
+    border: 1px solid #C7C7C7;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.informasi h4,
+.status-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #075697;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.informasi table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    color: #222222;
+}
+
+.informasi table td {
+    padding: 3px 0;
+    vertical-align: top;
+}
+
+.informasi table td:nth-child(1) {
+    width: 48%;
+}
+
+.informasi table td:nth-child(2) {
+    width: 12px;
+}
+
+.informasi table td:nth-child(3) {
+    width: auto;
+}
+
+.status-box {
+    border: 1px solid #C7C7C7;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.status {
+    font-size: 10px;
+    color: #222222;
+}
+
+.status span {
+    color: #FF3B3B;
+    font-weight: 600;
+}
+
+
+.header-logo-footer {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.header-logo-footer-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.header-logo-footer img {
+    width: 40px;
+}
+
+.header-logo-footer div h1{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 25px;
+    color: #031735;
+}
+
+.header-logo-footer div p {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 12px;
+    color: #031735;
+}
+
+footer {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #031735;
+    margin-top: 10px;
+} 
+
+.footer-kontak {
+    font-size: 12px;
+    color: #031735;
+}
+
+.footer-kontak p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-kontak p span {
+    font-weight: 800;
+}
+
+.footer-kontak p iconify-icon {
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    font-size: 14px;
+}
+
+.footer-navigation {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.footer-navigation a {
+    text-decoration: none;
+    color: #031735;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-navigation a:hover {
+    color: #FF3B3B;
+    transform: translateY(-2px);
+}
+
+.footer-navigation a:active {
+    color: #FF3B3B;
+    transform: translateY(-2px);
+}
+
+
+
+/* Pop up Layanan Keamanan */
+nav ul li.nav-layanan:hover {
+    border-bottom: none;
+    transform: none;
+}
+
+.nav-layanan {
+    position: relative;
+}
+
+.nav-layanan > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.nav-layanan > a .arrow-icon {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+}
+
+.nav-layanan.show > a .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.layanan-keamanan-pop-up {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    width: 270px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #0B2545;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 1001;
+}
+
+.layanan-keamanan-pop-up.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.layanan-keamanan-pop-up a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: none !important;
+    transition: all 0.2s ease;
+}
+
+.layanan-keamanan-pop-up a iconify-icon {
+    font-size: 20px;
+    color: #93C5FD;
+}
+
+.layanan-keamanan-pop-up a:hover {
+    background-color: #164675;
+    color: #FFFFFF;
+    transform: translateX(4px);
+    border-bottom: none !important;
+}
+
+.layanan-keamanan-pop-up a:hover iconify-icon {
+    color: #FFFFFF;
+}
