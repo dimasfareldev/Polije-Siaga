@@ -1545,3 +1545,9 @@ h6 {
   transform: none;
   box-shadow: none;
 }
+
+/* Offcanvas Drawer Soft Deep Shadow (No Hard Border) */
+.offcanvas.offcanvas-end {
+  border-left: none !important;
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.45) !important;
+}

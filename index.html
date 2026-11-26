@@ -83,35 +83,38 @@
     </div>
   </header>
 
-    <div class="offcanvas offcanvas-end text-bg-dark border-start border-secondary" tabindex="-1" id="mobileMenu"
-    aria-labelledby="mobileMenuLabel" style="background: #071527 !important;">
-    <div class="offcanvas-header border-bottom border-secondary">
-      <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuLabel">
-        <iconify-icon icon="lucide:shield-check" class="text-warning fs-4"></iconify-icon>
-        <span>POLIJE SIAGA</span>
-      </h5>
+    <div class="offcanvas offcanvas-end text-bg-dark border-0 shadow-lg" tabindex="-1" id="mobileMenu"
+    aria-labelledby="mobileMenuLabel" style="background: #031735 !important; box-shadow: -15px 0 35px rgba(0, 0, 0, 0.45) !important;">
+    <div class="offcanvas-header border-bottom border-secondary pb-3">
+      <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+        <img src="img/logo-polije-siaga.webp" alt="Logo Polije Siaga" style="height: 38px; width: auto;" />
+        <div>
+          <span class="d-block text-white fw-bold fs-5 lh-1 mb-1">Polije Siaga</span>
+          <small class="d-block fw-semibold lh-1" style="font-size: 0.72rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
+        </div>
+      </a>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
       <ul class="nav flex-column gap-3 fs-5">
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="#beranda" data-bs-dismiss="offcanvas">Beranda</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="#beranda" data-bs-dismiss="offcanvas">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="pages/barangHilang.html">Lapor Barang Hilang</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="pages/barangHilang.html">Lapor Barang Hilang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="pages/barangTemukan.html">Lapor Barang Temuan</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="pages/barangTemukan.html">Lapor Barang Temuan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
         </li>
       </ul>
       <div class="pt-4 border-top border-secondary">
-        <a href="#kontak" class="btn btn-modern-primary w-100" data-bs-dismiss="offcanvas">
+        <a href="#kontak" class="btn btn-modern-primary w-100 py-3 rounded-pill fw-bold" data-bs-dismiss="offcanvas">
           Hubungi Posko Satpam
         </a>
       </div>
@@ -181,6 +184,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -259,6 +263,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -333,6 +338,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -560,6 +566,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -573,13 +580,17 @@
               Pantau laporan barang hilang yang dicari dan barang temuan yang diamankan di pos satpam.
             </p>
           </div>
-          <div class="col-lg-5">
-            <div class="position-relative">
+          <div class="col-lg-5 d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-lg-end gap-3">
+            <div class="position-relative flex-grow-1">
               <iconify-icon icon="lucide:search" class="position-absolute text-muted fs-5"
                 style="left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;"></iconify-icon>
               <input type="text" id="searchInput" class="form-control search-input-pill"
                 placeholder="Cari nama barang atau lokasi..." />
             </div>
+            <a href="pages/semuaBarang.html" class="btn btn-sm rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none shadow-sm flex-shrink-0" style="background: #ffffff; color: #031735; border: 1.5px solid #031735; height: 42px;">
+              <span>Lihat Semua Barang</span>
+              <iconify-icon icon="lucide:arrow-right" style="font-size: 1rem;"></iconify-icon>
+            </a>
           </div>
         </div>
 
@@ -731,6 +742,15 @@
               </div>
             </div>
           </div>
+        </div>
+
+      
+        <!-- Tombol Lihat Semua Laporan di Bawah Grid -->
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="pages/semuaBarang.html" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow-sm" style="color: #031735; border: 1.5px solid #031735;">
+            <span>Lihat Semua Laporan Barang</span>
+            <iconify-icon icon="lucide:arrow-right" class="fs-5"></iconify-icon>
+          </a>
         </div>
       </div>
     </section>
@@ -888,6 +908,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -961,6 +982,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
   </main>

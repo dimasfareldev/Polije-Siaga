@@ -94,42 +94,41 @@
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Menu -->
-  <div class="offcanvas offcanvas-end text-bg-dark border-0" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <!-- Mobile Offcanvas Menu (Persis Navbar Brand) -->
+  <div class="offcanvas offcanvas-end text-bg-dark border-0 shadow-lg" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" style="background: #031735 !important; box-shadow: -15px 0 35px rgba(0, 0, 0, 0.45) !important;">
     <div class="offcanvas-header border-bottom border-secondary pb-3">
-      <div class="d-flex align-items-center gap-2">
-        <img src="../img/logo-polije-siaga.webp" alt="Logo" style="height: 34px;" />
+      <a href="../index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+        <img src="../img/logo-polije-siaga.webp" alt="Logo Polije Siaga" style="height: 38px; width: auto;" />
         <div>
-          <h5 class="offcanvas-title text-white fw-bold mb-0 fs-6" id="mobileMenuLabel">Polije Siaga</h5>
-          <small style="color: #1a5380; font-size: 0.72rem;">Pusat Keamanan Terpadu</small>
+          <span class="d-block text-white fw-bold fs-5 lh-1 mb-1">Polije Siaga</span>
+          <small class="d-block fw-semibold lh-1" style="font-size: 0.72rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
         </div>
-      </div>
+      </a>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between pt-4">
-      <ul class="navbar-nav gap-3 fs-6">
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+      <ul class="nav flex-column gap-3 fs-5">
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="../index.html">Beranda</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="../index.html">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0 fw-bold" href="barangHilang.html">Lapor Barang Hilang</a>
+          <a class="nav-link text-white ps-0 fw-semibold text-primary" href="barangHilang.html">Lapor Barang Hilang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="barangTemukan.html">Lapor Barang Temuan</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="barangTemukan.html">Lapor Barang Temuan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="../index.html#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="../index.html#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white ps-0" href="../index.html#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
+          <a class="nav-link text-white ps-0 fw-semibold" href="../index.html#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
         </li>
       </ul>
       <div class="pt-4 border-top border-secondary">
-        <a href="formLaporanKehilangan.html" class="btn btn-primary w-100 py-2 fw-semibold mb-2"
-          style="background: #1d4ed8; border-color: #1d4ed8;">
+        <a href="formLaporanKehilangan.html" class="btn btn-modern-primary w-100 py-3 rounded-pill fw-bold mb-2">
           Buat Laporan Hilang
         </a>
-        <a href="../index.html#kontak" class="btn btn-outline-light w-100 py-2 fw-semibold">
+        <a href="../index.html#kontak" class="btn btn-outline-light w-100 py-2 rounded-pill fw-semibold">
           Hubungi Posko Satpam
         </a>
       </div>
@@ -183,28 +182,19 @@
           </div>
         </div>
 
-        <!-- Filter 7 Kategori Sesuai Permintaan -->
+        <!-- Filter 5 Kategori (Semua Kategori, Elektronik, Kunci Kontak, Dompet & KTM, Lain-lain) -->
         <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up">
           <button class="filter-btn-pill active" data-filter="all">
             Semua Kategori (10)
           </button>
-          <button class="filter-btn-pill" data-filter="dompet">
-            Dompet &amp; KTM
+          <button class="filter-btn-pill" data-filter="elektronik">
+            Elektronik &amp; Gadget
           </button>
           <button class="filter-btn-pill" data-filter="kunci">
             Kunci Kontak
           </button>
-          <button class="filter-btn-pill" data-filter="elektronik">
-            Elektronik &amp; Gadget
-          </button>
-          <button class="filter-btn-pill" data-filter="laptop">
-            Laptop &amp; Komputer
-          </button>
-          <button class="filter-btn-pill" data-filter="dokumen">
-            Berkas &amp; Buku
-          </button>
-          <button class="filter-btn-pill" data-filter="pakaian">
-            Helm &amp; Jaket
+          <button class="filter-btn-pill" data-filter="dompet">
+            Dompet &amp; KTM
           </button>
           <button class="filter-btn-pill" data-filter="lainnya">
             Lain-lain
@@ -345,17 +335,17 @@
             </div>
           </div>
 
-          <!-- Item 5: Laptop Lenovo Ideapad (Kategori: Laptop & Komputer) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="laptop" data-aos="fade-up" data-aos-delay="300">
+          <!-- Item 5: Laptop Acer Swift Rose Gold (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="300">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/laptop.webp" alt="Laptop Lenovo Ideapad" class="item-photo-img" />
+                <img src="../img/laptop-acer.webp" alt="Laptop Acer Swift Stiker Macan" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Laptop Lenovo Ideapad</h5>
+                <h5 class="fw-bold text-navy mb-2">Laptop Acer Swift</h5>
                 <p class="text-muted small mb-3">
-                  Unit laptop Lenovo warna abu-abu gelap dengan stiker prodi TI tertinggal di meja ruang seminar.
+                  Laptop Acer warna rose gold dengan stiker motif macan tutul di sudut kanan bawah, tertinggal di ruang kuliah.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
@@ -378,17 +368,17 @@
             </div>
           </div>
 
-          <!-- Item 6: Flashdisk Cruzer 32GB (Kategori: Elektronik & Gadget) -->
+          <!-- Item 6: Smartphone Samsung Galaxy Burgundy (Kategori: Elektronik & Gadget) -->
           <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="350">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/flashdisk.webp" alt="Flashdisk Sandisk Cruzer" class="item-photo-img" />
+                <img src="../img/hp-samsung.webp" alt="Smartphone Samsung Burgundy" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Flashdisk Sandisk 32GB</h5>
+                <h5 class="fw-bold text-navy mb-2">Samsung Galaxy A14</h5>
                 <p class="text-muted small mb-3">
-                  Flashdisk warna hitam merah bertali gantungan biru berisi file tugas akhir perkuliahan.
+                  Smartphone Samsung warna merah marun (burgundy) dengan bekas stiker putih di punggung hp, tercecer di perpustakaan.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
@@ -411,17 +401,17 @@
             </div>
           </div>
 
-          <!-- Item 7: Kunci Motor Beat Gantungan Dompet (Kategori: Kunci Kontak) -->
+          <!-- Item 7: Kunci Kontak Honda Gantungan Tasbih Kayu (Kategori: Kunci Kontak) -->
           <div class="col-md-6 col-lg-3 report-card-col" data-category="kunci" data-aos="fade-up" data-aos-delay="400">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/kunci-motor.webp" alt="Kunci Motor Honda Beat" class="item-photo-img" />
+                <img src="../img/kunci-tasbih.webp" alt="Kunci Honda Gantungan Tasbih Kayu" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Kunci Motor Honda Beat</h5>
+                <h5 class="fw-bold text-navy mb-2">Kunci Motor Honda Tasbih</h5>
                 <p class="text-muted small mb-3">
-                  Kunci motor dengan gantungan silikon hitam dan remote alarm, tertinggal di kantong parkir timur.
+                  Kunci motor Honda dengan gantungan tasbih butiran kayu coklat dan gantungan plat persegi, tertinggal di area parkir.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
@@ -444,17 +434,17 @@
             </div>
           </div>
 
-          <!-- Item 8: Dompet Lipat Hitam & Kartu Mahasiswa (Kategori: Dompet & KTM) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="dompet" data-aos="fade-up" data-aos-delay="450">
+          <!-- Item 8: TWS Earbuds Oppo Enco Buds Putih (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="450">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/dompet.webp" alt="Dompet Kulit Hitam" class="item-photo-img" />
+                <img src="../img/tws-oppo.webp" alt="TWS Earphone Oppo Putih" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Dompet Lipat Hitam</h5>
+                <h5 class="fw-bold text-navy mb-2">TWS Earbuds Oppo</h5>
                 <p class="text-muted small mb-3">
-                  Dompet kulit sintetis hitam berisikan KTM, SIM C, dan kartu akses parkir gedung perkuliahan.
+                  Charging case TWS bluetooth merk Oppo warna putih polos dengan indikator lampu kecil, tertinggal di meja kantin.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
@@ -477,17 +467,17 @@
             </div>
           </div>
 
-          <!-- Item 9: Buku Catatan & Binder Kuliah (Kategori: Berkas & Buku) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="dokumen" data-aos="fade-up" data-aos-delay="500">
+          <!-- Item 9: Kotak Pensil Jaring Transparan Kenko (Kategori: Lain-lain) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="lainnya" data-aos="fade-up" data-aos-delay="500">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/mencari-barang-1.webp" alt="Binder Kuliah Biru" class="item-photo-img" />
+                <img src="../img/kotak-pensil.webp" alt="Kotak Pensil Transparan Kenko" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Binder Catatan &amp; Modul</h5>
+                <h5 class="fw-bold text-navy mb-2">Kotak Pensil Kenko Jaring</h5>
                 <p class="text-muted small mb-3">
-                  Binder warna biru navy berisikan catatan praktikum workshop desain dan berkas proposal tim.
+                  Tempat pensil bahan mesh/jaring transparan putih merk Kenko berisikan pulpen, penghapus, dan correction tape.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
@@ -510,17 +500,17 @@
             </div>
           </div>
 
-          <!-- Item 10: Jaket Parka Polije Hijau Army (Kategori: Helm & Jaket) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="pakaian" data-aos="fade-up" data-aos-delay="550">
+          <!-- Item 10: Keyboard Wireless Bluetooth Mini Hitam (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="550">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status loss">Kehilangan</span>
-                <img src="../img/alur-isi-formulir.webp" alt="Jaket Parka Polije" class="item-photo-img" />
+                <img src="../img/keyboard-wireless.webp" alt="Keyboard Wireless Bluetooth Hitam" class="item-photo-img" />
               </div>
               <div class="p-4 d-flex flex-column flex-grow-1">
-                <h5 class="fw-bold text-navy mb-2">Jaket Jurusan Hijau Army</h5>
+                <h5 class="fw-bold text-navy mb-2">Keyboard Wireless Mini</h5>
                 <p class="text-muted small mb-3">
-                  Jaket angkatan warna hijau army dengan emblem bendera dan bordir jurusan Teknologi Informasi.
+                  Keyboard bluetooth portable warna hitam layout QWERTY dengan switch on/off di pojok kanan atas untuk tablet/laptop.
                 </p>
                 <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
                   <div class="d-flex align-items-center gap-2">
