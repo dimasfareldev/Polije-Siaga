@@ -6,33 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Polije Siaga - Pusat Informasi & Keamanan Kampus</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- Bootstrap 5.3 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-  <!-- AOS (Animate On Scroll) Library -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Iconify Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 
-  <!-- Custom Modern CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- 1. Sticky Glass Navbar -->
-  <header class="custom-navbar">
+    <header class="custom-navbar">
     <div class="container d-flex align-items-center justify-content-between">
-      <!-- Brand Logo -->
-      <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+            <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
         <img src="img/logo-polije-siaga.webp" alt="Logo Polije Siaga" class="brand-logo-img" />
         <div>
           <span class="d-block text-white fw-bold fs-5 lh-1 mb-1">Polije Siaga</span>
@@ -40,12 +33,10 @@
         </div>
       </a>
 
-      <!-- Desktop Nav Items -->
-      <nav class="d-none d-lg-flex align-items-center gap-1">
+            <nav class="d-none d-lg-flex align-items-center gap-1">
         <a href="#beranda" class="nav-link active">Beranda</a>
 
-        <!-- Dropdown Layanan -->
-        <div class="nav-item dropdown">
+                <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Layanan Keamanan
@@ -74,8 +65,7 @@
         <a href="#pengumuman" class="nav-link">Pengumuman</a>
       </nav>
 
-      <!-- CTA & Mobile Toggle -->
-      <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-3">
         <a href="#kontak" class="btn-glass d-none d-sm-inline-flex py-2 px-3 small">
           <iconify-icon icon="lucide:phone-call"></iconify-icon>
           <span>Posko 24 Jam</span>
@@ -85,8 +75,7 @@
           <span>Cari Barang</span>
         </a>
 
-        <!-- Mobile Toggle Button -->
-        <button class="btn btn-outline-light d-lg-none p-2 border-0" type="button" data-bs-toggle="offcanvas"
+                <button class="btn btn-outline-light d-lg-none p-2 border-0" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#mobileMenu" aria-controls="mobileMenu">
           <iconify-icon icon="lucide:menu" class="fs-4"></iconify-icon>
         </button>
@@ -94,8 +83,7 @@
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Menu -->
-  <div class="offcanvas offcanvas-end text-bg-dark border-start border-secondary" tabindex="-1" id="mobileMenu"
+    <div class="offcanvas offcanvas-end text-bg-dark border-start border-secondary" tabindex="-1" id="mobileMenu"
     aria-labelledby="mobileMenuLabel" style="background: #071527 !important;">
     <div class="offcanvas-header border-bottom border-secondary">
       <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuLabel">
@@ -131,10 +119,8 @@
   </div>
 
   <main>
-    <!-- 2. Hero Section (Inspirasi Layout Desa Marga Mulya - Clean Left Hero + Bottom Pill Ribbon) -->
-    <section class="hero-section hero-nature-style" id="beranda">
-      <!-- Overlay Gradasi Gelap Elegan Sisi Kiri -->
-      <div class="hero-left-vignette"></div>
+        <section class="hero-section hero-nature-style" id="beranda">
+            <div class="hero-left-vignette"></div>
 
       <div class="container position-relative hero-main-container">
         <div class="row">
@@ -161,37 +147,32 @@
         </div>
       </div>
 
-      <!-- Floating Bottom Stats Pill Card (Persis Seperti di Gambar Referensi Bawah) -->
-      <div class="hero-bottom-pill-wrapper">
+            <div class="hero-bottom-pill-wrapper">
         <div class="container">
           <div class="hero-bottom-pill-card" data-aos="fade-up" data-aos-delay="200">
             <div class="row g-0 align-items-center text-center">
-              <!-- Stat Item 1 -->
-              <div class="col-6 col-md-3 pill-stat-col">
+                            <div class="col-6 col-md-3 pill-stat-col">
                 <div class="pill-stat-val">
                   <span class="counter-number" data-target="148">0</span>
                 </div>
                 <div class="pill-stat-lbl">Laporan Masuk</div>
               </div>
 
-              <!-- Stat Item 2 -->
-              <div class="col-6 col-md-3 pill-stat-col">
+                            <div class="col-6 col-md-3 pill-stat-col">
                 <div class="pill-stat-val">
                   <span class="counter-number" data-target="129">0</span><span class="unit">Item</span>
                 </div>
                 <div class="pill-stat-lbl">Barang Diamankan</div>
               </div>
 
-              <!-- Stat Item 3 -->
-              <div class="col-6 col-md-3 pill-stat-col">
+                            <div class="col-6 col-md-3 pill-stat-col">
                 <div class="pill-stat-val">
                   <span class="counter-number" data-target="24">0</span><span class="unit">Jam</span>
                 </div>
                 <div class="pill-stat-lbl">Siaga Petugas Pos</div>
               </div>
 
-              <!-- Stat Item 4 -->
-              <div class="col-6 col-md-3 pill-stat-col last">
+                            <div class="col-6 col-md-3 pill-stat-col last">
                 <div class="pill-stat-val">
                   <span class="counter-number" data-target="87">0</span><span class="unit">%</span>
                 </div>
@@ -203,11 +184,9 @@
       </div>
     </section>
 
-    <!-- 4. What We Can Help With (4 White Rounded Cards) -->
-    <section class="py-5" id="layanan">
+        <section class="py-5" id="layanan">
       <div class="container py-lg-4">
-        <!-- Section Heading -->
-        <div class="text-center mb-5" data-aos="fade-up">
+                <div class="text-center mb-5" data-aos="fade-up">
           <span class="badge-soft-primary mb-2">Fasilitas & Layanan</span>
           <h2 class="display-6 fw-bold text-navy">Layanan Keamanan Kampus</h2>
           <p class="text-muted mx-auto" style="max-width: 580px;">
@@ -215,10 +194,8 @@
           </p>
         </div>
 
-        <!-- 4 Cards Grid -->
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="service-feature-card">
               <div class="service-icon-circle">
                 <iconify-icon icon="lucide:package-check"></iconify-icon>
@@ -234,8 +211,7 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="service-feature-card">
               <div class="service-icon-circle">
                 <iconify-icon icon="lucide:search"></iconify-icon>
@@ -251,8 +227,7 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="service-feature-card">
               <div class="service-icon-circle">
                 <iconify-icon icon="lucide:file-check-2"></iconify-icon>
@@ -268,8 +243,7 @@
             </div>
           </div>
 
-          <!-- Card 4 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="service-feature-card">
               <div class="service-icon-circle">
                 <iconify-icon icon="lucide:phone-forwarded"></iconify-icon>
@@ -288,11 +262,9 @@
       </div>
     </section>
 
-    <!-- 5. Featured Work (Alur Pelaporan & Pengambilan) -->
-    <section class="py-5 bg-white border-top border-bottom border-light" id="alur">
+        <section class="py-5 bg-white border-top border-bottom border-light" id="alur">
       <div class="container py-lg-4">
-        <!-- Section Heading -->
-        <div class="text-center mb-5" data-aos="fade-up">
+                <div class="text-center mb-5" data-aos="fade-up">
           <span class="badge-soft-primary mb-2">Standard Operating Procedure</span>
           <h2 class="display-6 fw-bold text-navy">Alur Pelaporan & Pengambilan</h2>
           <p class="text-muted mx-auto" style="max-width: 580px;">
@@ -300,10 +272,8 @@
           </p>
         </div>
 
-        <!-- 4 Steps Work Grid -->
-        <div class="row g-4">
-          <!-- Step 1 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="step-work-card">
               <div class="step-card-visual">
                 <span class="step-pill-tag">Langkah 01</span>
@@ -318,8 +288,7 @@
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="step-work-card">
               <div class="step-card-visual">
                 <span class="step-pill-tag">Langkah 02</span>
@@ -334,8 +303,7 @@
             </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="step-work-card">
               <div class="step-card-visual">
                 <span class="step-pill-tag">Langkah 03</span>
@@ -350,8 +318,7 @@
             </div>
           </div>
 
-          <!-- Step 4 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="step-work-card">
               <div class="step-card-visual">
                 <span class="step-pill-tag">Layanan 24/7</span>
@@ -369,8 +336,7 @@
       </div>
     </section>
 
-    <!-- 6. Realtime Security & Lost-Found Analytics Dashboard (Desain Beragam Sesuai Referensi) -->
-    <section class="py-5 bg-light-surface border-top border-bottom border-light" id="statistik">
+        <section class="py-5 bg-light-surface border-top border-bottom border-light" id="statistik">
       <div class="container py-lg-4">
         <div class="text-center mb-5" data-aos="fade-up">
           <span class="badge-soft-primary mb-2">Transparansi Data &amp; Posko</span>
@@ -381,8 +347,7 @@
           </p>
         </div>
 
-        <!-- Baris 1: 3 KPI Quick Metric Cards di atas -->
-        <div class="row g-4 mb-4">
+                <div class="row g-4 mb-4">
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="kpi-mini-card">
               <div class="d-flex justify-content-between align-items-center mb-3">
@@ -441,10 +406,8 @@
           </div>
         </div>
 
-        <!-- Baris 2: Chart Batang Kiri & Donut/Progress Kanan (Persis Referensi Dashboard Desa Marga Mulya) -->
-        <div class="row g-4">
-          <!-- Kolom Kiri: Diagram Batang Kategori Barang Terbanyak -->
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                <div class="row g-4">
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
             <div class="stat-analytics-box h-100 d-flex flex-column">
               <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
                 <div>
@@ -454,8 +417,7 @@
                 <span class="badge-pill-tag-soft">Kategori Terbanyak</span>
               </div>
 
-              <!-- Custom Visual CSS Bar Chart -->
-              <div class="chart-bars-container mt-auto pt-3" id="barChartContainer">
+                            <div class="chart-bars-container mt-auto pt-3" id="barChartContainer">
                 <div class="chart-bar-item">
                   <div class="chart-bar-track">
                     <div class="chart-bar-fill bar-navy" data-height="82%" style="height: 0%;">
@@ -518,11 +480,9 @@
             </div>
           </div>
 
-          <!-- Kolom Kanan: Donut Chart Status & Progress Tingkat Pengembalian -->
-          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
             <div class="d-flex flex-column gap-4 h-100">
-              <!-- Box Atas: Donut Chart Status Barang -->
-              <div class="stat-analytics-box">
+                            <div class="stat-analytics-box">
                 <h5 class="fw-bold text-navy mb-1">Status Penanganan Barang</h5>
                 <p class="text-muted small mb-3">Persentase total 148 laporan semester ini</p>
                 
@@ -557,8 +517,7 @@
                 </div>
               </div>
 
-              <!-- Box Bawah: Progress Bar Tingkat Efektivitas Layanan -->
-              <div class="stat-analytics-box flex-grow-1">
+                            <div class="stat-analytics-box flex-grow-1">
                 <h5 class="fw-bold text-navy mb-1">Performa Respon &amp; Verifikasi</h5>
                 <p class="text-muted small mb-3">Standar kecepatan pelayanan pos satpam</p>
 
@@ -604,11 +563,9 @@
       </div>
     </section>
 
-    <!-- 7. Daftar Laporan Terkini (Interactive Search & Filter Grid) -->
-    <section class="py-5" id="laporan">
+        <section class="py-5" id="laporan">
       <div class="container py-lg-4">
-        <!-- Header and Search -->
-        <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
+                <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
           <div class="col-lg-7">
             <span class="badge-soft-primary mb-2">Data Realtime</span>
             <h2 class="display-6 fw-bold text-navy">Daftar Laporan Barang Kampus</h2>
@@ -626,8 +583,7 @@
           </div>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up">
+                <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up">
           <button class="filter-btn-pill active" data-filter="all">
             Semua Laporan (4)
           </button>
@@ -641,10 +597,8 @@
           </button>
         </div>
 
-        <!-- Items Grid -->
-        <div class="row g-4" id="reportsGrid">
-          <!-- Item 1: Kehilangan Dompet Dunhill (Foto dompet-dunhill.webp) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
+                <div class="row g-4" id="reportsGrid">
+                    <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
             data-aos-delay="100">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
@@ -678,8 +632,7 @@
             </div>
           </div>
 
-          <!-- Item 2: Temuan Kunci Motor Honda + Gantungan (Foto kunci-honda.webp) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="200">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status found">Temuan Posko</span>
@@ -712,8 +665,7 @@
             </div>
           </div>
 
-          <!-- Item 3: Temuan Mouse Olike Wireless Pink (Foto mouse-olike.webp) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="300">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
                 <span class="item-badge-status found">Temuan Posko</span>
@@ -746,8 +698,7 @@
             </div>
           </div>
 
-          <!-- Item 4: Kehilangan Earphone Putih 3.5mm (Foto earphone-putih.webp) -->
-          <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
+                    <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
             data-aos-delay="400">
             <div class="report-item-card">
               <div class="item-visual-photo-wrap">
@@ -784,8 +735,7 @@
       </div>
     </section>
 
-    <!-- 7.5. Pengumuman & Info Lalu Lintas Kampus -->
-    <section class="py-5 bg-white border-top border-light" id="pengumuman">
+        <section class="py-5 bg-white border-top border-light" id="pengumuman">
       <div class="container py-lg-4">
         <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
           <div class="col-lg-8">
@@ -804,11 +754,9 @@
         </div>
 
         <div class="row g-4 align-items-stretch">
-          <!-- Kiri (Besar / Headline): Gerbang Depan Wisuda -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
-              <!-- Foto Bukti Acara -->
-              <div class="position-relative" style="height: 200px;">
+                            <div class="position-relative" style="height: 200px;">
                 <img src="img/paraSatpam.webp" alt="Pengamanan Acara Wisuda Polije" class="w-100 h-100 object-fit-cover" />
               </div>
               <div class="p-3 p-lg-4 d-flex flex-column flex-grow-1 justify-content-between">
@@ -837,12 +785,10 @@
             </div>
           </div>
 
-          <!-- Kanan (4 Kotak Berita: Grid 2x2 dengan Foto) -->
-          <div class="col-lg-6">
+                    <div class="col-lg-6">
             <div class="row g-3 h-100">
 
-              <!-- Card 1: Penutupan Jalan Gedung Teknik (Bazar) -->
-              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
                   <div class="position-relative" style="height: 115px;">
                     <img src="img/satpam-polije.webp" alt="Penutupan Jalan Gedung Teknik" class="w-100 h-100 object-fit-cover" />
@@ -865,8 +811,7 @@
                 </div>
               </div>
 
-              <!-- Card 2: Jaga Barangmu Saat Konser Inagurasi -->
-              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="250">
                 <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
                   <div class="position-relative" style="height: 115px;">
                     <img src="img/mencari-barang-2.webp" alt="Konser Inagurasi Polije" class="w-100 h-100 object-fit-cover" />
@@ -889,8 +834,7 @@
                 </div>
               </div>
 
-              <!-- Card 3: CCTV Mati Gedung TI -->
-              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
                   <div class="position-relative" style="height: 115px;">
                     <img src="img/paraSatpam.webp" alt="CCTV Mati Gedung TI" class="w-100 h-100 object-fit-cover" />
@@ -913,8 +857,7 @@
                 </div>
               </div>
 
-              <!-- Card 4: Razia Kendaraan Tanpa STNK -->
-              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="350">
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="350">
                 <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
                   <div class="position-relative" style="height: 115px;">
                     <img src="img/earphone-putih.webp" alt="Razia Kendaraan" class="w-100 h-100 object-fit-cover" />
@@ -948,13 +891,11 @@
       </div>
     </section>
 
-    <!-- 8. Bottom CTA Card (Executive Contact Box Reference) -->
-    <section class="section-cta-executive" id="kontak">
+        <section class="section-cta-executive" id="kontak">
       <div class="container">
         <div class="executive-cta-card" data-aos="zoom-in" data-aos-duration="900">
           <div class="row align-items-center g-5">
-            <!-- Left Info -->
-            <div class="col-lg-6">
+                        <div class="col-lg-6">
               <span class="badge-glass-modern mb-3">Respon Cepat Tanggap</span>
               <h3 class="display-6 fw-bold text-white mb-3">Butuh Bantuan Posko Segera?</h3>
               <p class="text-light text-opacity-75 mb-4" style="line-height: 1.7;">
@@ -962,8 +903,7 @@
                 kehilangan darurat atau menemukan barang berharga di lingkungan kampus.
               </p>
 
-              <!-- Direct Action Buttons (Darurat) -->
-              <div class="d-flex flex-wrap gap-3 mt-2">
+                            <div class="d-flex flex-wrap gap-3 mt-2">
                 <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn-hero-solid" style="background: #ffffff; color: #031735 !important;">
                   <iconify-icon icon="lucide:message-circle"></iconify-icon>
                   <span>Chat WhatsApp Posko</span>
@@ -975,12 +915,10 @@
               </div>
             </div>
 
-            <!-- Right Quick Form (Dynamic Mahasiswa vs Umum) -->
-            <div class="col-lg-6">
+                        <div class="col-lg-6">
               <form action="#" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-3 p-4 rounded-4"
                 style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
-                <!-- Toggle Status Pelapor -->
-                <div class="d-flex gap-2 p-1 rounded-pill" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                <div class="d-flex gap-2 p-1 rounded-pill" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1);">
                   <button type="button" class="btn btn-sm rounded-pill flex-fill fw-semibold reporter-type-btn active" data-type="mahasiswa"
                     style="background: #ffffff; color: #031735;">
                     Mahasiswa / Civitas
@@ -1015,7 +953,7 @@
 
                 <textarea class="form-control form-control-glass" rows="3"
                   placeholder="Pesan atau Laporan Singkat Kejadian..." required></textarea>
-                <button type="submit" class="btn-modern-primary w-100 mt-1 py-3">
+                <button type="submit  " class="btn-modern-primary w-100 mt-1 py-3">
                   <span>Kirim Laporan Cepat</span>
                   <iconify-icon icon="lucide:send"></iconify-icon>
                 </button>
@@ -1027,18 +965,14 @@
     </section>
   </main>
 
-  <!-- 9. Footer Executive (Referensi Lengkap: 5 Kolom + Quote Card + Maps + Back to Top) -->
-  <footer class="footer-executive position-relative">
-    <!-- Floating Back to Top Button on Top-Right Curve -->
-    <a href="#beranda" class="footer-scroll-top-btn position-absolute" style="top: 24px; right: 36px; z-index: 10;" title="Kembali ke Atas" aria-label="Kembali ke Atas">
+    <footer class="footer-executive position-relative">
+        <a href="#beranda" class="footer-scroll-top-btn position-absolute" style="top: 24px; right: 36px; z-index: 10;" title="Kembali ke Atas" aria-label="Kembali ke Atas">
       <iconify-icon icon="lucide:arrow-up"></iconify-icon>
     </a>
 
     <div class="container pt-5 pb-4">
-      <!-- Baris 1: 5 Kolom Navigasi & Info -->
-      <div class="row g-4 pb-5">
-        <!-- Kolom 1: Brand & Deskripsi -->
-        <div class="col-lg-3 col-md-6">
+            <div class="row g-4 pb-5">
+                <div class="col-lg-3 col-md-6">
           <div class="d-flex align-items-center gap-3 mb-3">
             <img src="img/logo-polije-siaga.webp" alt="Logo Polije Siaga" style="height: 44px; width: auto;" />
             <div>
@@ -1051,8 +985,7 @@
           </p>
         </div>
 
-        <!-- Kolom 2: Jelajahi -->
-        <div class="col-lg-2 col-md-6 col-6">
+                <div class="col-lg-2 col-md-6 col-6">
           <h6 class="text-white fw-bold mb-3">Jelajahi</h6>
           <ul class="footer-nav-list">
             <li><a href="#beranda"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Beranda</a></li>
@@ -1062,8 +995,7 @@
           </ul>
         </div>
 
-        <!-- Kolom 3: Informasi -->
-        <div class="col-lg-2 col-md-6 col-6">
+                <div class="col-lg-2 col-md-6 col-6">
           <h6 class="text-white fw-bold mb-3">Informasi</h6>
           <ul class="footer-nav-list">
             <li><a href="#statistik"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Statistik</a></li>
@@ -1071,8 +1003,7 @@
           </ul>
         </div>
 
-        <!-- Kolom 4: Layanan Utama -->
-        <div class="col-lg-2 col-md-6 col-6">
+                <div class="col-lg-2 col-md-6 col-6">
           <h6 class="text-white fw-bold mb-3">Layanan Utama</h6>
           <ul class="footer-nav-list">
             <li><a href="pages/barangHilang.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Lapor Hilang</a></li>
@@ -1082,8 +1013,7 @@
           </ul>
         </div>
 
-        <!-- Kolom 5: Kontak Posko -->
-        <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
           <h6 class="text-white fw-bold mb-3">Kontak Posko</h6>
           <ul class="footer-contact-list">
             <li>
@@ -1107,8 +1037,7 @@
       </div>
     </div>
 
-    <!-- Bottom Bar: Copyright -->
-    <div class="footer-bottom-bar">
+        <div class="footer-bottom-bar">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
           <p class="small text-light text-opacity-50 mb-0">
@@ -1119,16 +1048,13 @@
     </div>
   </footer>
 
-  <!-- Bootstrap 5.3 Bundle JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <!-- AOS JS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Interactive Custom Script -->
-  <script>
+    <script>
     // Initialize AOS Animation
     AOS.init({
       duration: 800,

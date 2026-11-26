@@ -1,61 +1,45 @@
-/* ==========================================================================
-   POLIJE SIAGA - ULTRA MODERN BOOTSTRAP 5 DESIGN SYSTEM
-   Theme: Royal Tech Navy (#031735) with Frost White & Cyan Glow Gradient
-   Glassmorphism + Smooth Mesh + Refined Shadows + High Contrast Readability
-   ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Primary Navy Palette (#031735 Based) */
-  --ps-navy-950: #020f23;
+    --ps-navy-950: #020f23;
   --ps-navy-900: #031735;
-  /* Base Primary Dark requested by user */
-  --ps-navy-850: #06224d;
+    --ps-navy-850: #06224d;
   --ps-navy-800: #0a2d64;
   --ps-navy-700: #103c80;
   --ps-navy-600: #194e9e;
 
-  /* Modern Frost White / Ice Silver / Cyan Tech Glow */
-  --ps-white: #ffffff;
+    --ps-white: #ffffff;
   --ps-frost-100: #f1f5f9;
   --ps-frost-200: #e2e8f0;
   --ps-cyan-glow: #38bdf8;
   --ps-cyan-bright: #0ea5e9;
   --ps-accent-gold: #f59e0b;
 
-  /* Modern Gradients: Deep Navy into Frost White / Soft Ice Cyan */
-  --ps-brand-gradient: linear-gradient(135deg, #031735 0%, #0a2d64 60%, #17458b 100%);
+    --ps-brand-gradient: linear-gradient(135deg, #031735 0%, #0a2d64 60%, #17458b 100%);
   --ps-text-gradient-white: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #bae6fd 100%);
   --ps-glow-gradient: linear-gradient(135deg, #38bdf8 0%, #ffffff 60%, #93c5fd 100%);
   --ps-button-white-gradient: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
 
-  /* Surface & Backgrounds */
-  --ps-bg-light: #f8fafc;
+    --ps-bg-light: #f8fafc;
   --ps-card-bg: #ffffff;
   --ps-card-border: #e2e8f0;
 
-  /* Text Palettes */
-  --ps-text-main: #0f172a;
+    --ps-text-main: #0f172a;
   --ps-text-muted: #64748b;
   --ps-text-light: #94a3b8;
   --ps-text-white: #ffffff;
 
-  /* Semantic */
-  --ps-danger: #ef4444;
+    --ps-danger: #ef4444;
   --ps-success: #10b981;
   --ps-warning: #f59e0b;
   --ps-info: #38bdf8;
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-shadow: 0 20px 40px -15px rgba(2, 15, 35, 0.5);
 }
 
-/* ==========================================================================
-   GLOBAL BASE & TYPOGRAPHY
-   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -81,7 +65,6 @@ h6 {
   letter-spacing: -0.02em;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -99,7 +82,6 @@ h6 {
   background: var(--ps-cyan-bright);
 }
 
-/* Gradient Text Utilities */
 .text-gradient-white {
   background: var(--ps-text-gradient-white);
   -webkit-background-clip: text;
@@ -118,7 +100,6 @@ h6 {
   -webkit-text-fill-color: transparent;
 }
 
-/* Badges */
 .badge-glass-modern {
   display: inline-flex;
   align-items: center;
@@ -155,9 +136,6 @@ h6 {
   letter-spacing: 0.05em;
 }
 
-/* ==========================================================================
-   BUTTONS & MICRO-INTERACTIONS
-   ========================================================================== */
 .btn-modern-primary {
   background: var(--ps-button-white-gradient);
   color: var(--ps-navy-900) !important;
@@ -225,9 +203,6 @@ h6 {
   color: #ffffff !important;
 }
 
-/* ==========================================================================
-   NAVBAR (STICKY GLASSMORPHISM #031735 - UKURAN TETAP KONSISTEN)
-   ========================================================================== */
 .custom-navbar {
   position: fixed;
   top: 0;
@@ -239,15 +214,13 @@ h6 {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.85rem 0;
-  /* Tetap konsisten tidak berubah saat scroll */
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-navbar.scrolled {
   background: rgba(2, 15, 35, 0.98);
   padding: 0.85rem 0;
-  /* Ukuran padding 100% dipertahankan sama agar tidak loncat */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -333,9 +306,6 @@ h6 {
   color: #34d399;
 }
 
-/* ==========================================================================
-   HERO SECTION (DESA MARGA MULYA STYLE - CLEAN LEFT IMPACT & BOTTOM PILL)
-   ========================================================================== */
 .hero-section.hero-nature-style {
   position: relative;
   background-color: var(--ps-navy-900);
@@ -348,8 +318,7 @@ h6 {
   background-repeat: no-repeat;
   padding-top: 175px;
   padding-bottom: 0;
-  /* Padding bawah dihilangkan agar card pill menempel pas di batas bawah */
-  min-height: 94vh;
+    min-height: 94vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -361,7 +330,6 @@ h6 {
   padding-bottom: 40px;
 }
 
-/* Title & Divider Left */
 .hero-clean-title {
   font-size: 3.8rem;
   font-weight: 800;
@@ -386,7 +354,6 @@ h6 {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Buttons Primary Brand & Outline */
 .btn-hero-solid {
   background: var(--ps-navy-900);
   color: #ffffff !important;
@@ -429,22 +396,17 @@ h6 {
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   FLOATING BOTTOM PILL STATS CARD (PERSIS DESAIN REFERENSI)
-   ========================================================================== */
 .hero-bottom-pill-wrapper {
   position: relative;
   z-index: 25;
   transform: translateY(50%);
-  /* Tepat 50% di atas gambar hero dan 50% menembus section putih bawah */
-  width: 100%;
+    width: 100%;
 }
 
 .hero-bottom-pill-card {
   background: #ffffff;
   border-radius: 9999px;
-  /* Pure Pill Shape */
-  padding: 1.5rem 2.8rem;
+    padding: 1.5rem 2.8rem;
   box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.04);
   max-width: 960px;
@@ -465,8 +427,7 @@ h6 {
   font-weight: 800;
   font-family: 'Outfit', sans-serif;
   color: var(--ps-navy-900);
-  /* Senada dengan identitas Polije Siaga Navy #031735 */
-  line-height: 1;
+    line-height: 1;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -486,7 +447,6 @@ h6 {
   margin-top: 0.35rem;
 }
 
-/* Penyesuaian section putih di bawah hero agar jaraknya seimbang */
 #layanan {
   padding-top: 95px !important;
 }
@@ -568,14 +528,10 @@ h6 {
   }
 }
 
-/* ==========================================================================
-   OVERLAP PROFILE & STATS BANNER
-   ========================================================================== */
 .overlap-wrapper {
   position: relative;
   margin-top: 55px;
-  /* Diberi margin yang cukup agar tidak menabrak pill card hero */
-  z-index: 20;
+    z-index: 20;
 }
 
 .profile-master-card {
@@ -632,7 +588,6 @@ h6 {
   transform: translateY(-2px);
 }
 
-/* Metric Ribbon Bar */
 .metric-ribbon-bar {
   background: var(--ps-navy-900);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -653,9 +608,6 @@ h6 {
   color: var(--ps-cyan-glow);
 }
 
-/* ==========================================================================
-   SERVICES (4 ROUNDED CARDS)
-   ========================================================================== */
 .service-feature-card {
   background: #ffffff;
   border: 1px solid var(--ps-card-border);
@@ -737,9 +689,6 @@ h6 {
   transform: translateX(5px);
 }
 
-/* ==========================================================================
-   ALUR STEP CARDS (FEATURED WORK STYLE)
-   ========================================================================== */
 .step-work-card {
   background: #ffffff;
   border: 1px solid var(--ps-card-border);
@@ -807,15 +756,10 @@ h6 {
   border-radius: 50px;
 }
 
-/* ==========================================================================
-   REALTIME STATISTIC ANALYTICS SECTION (LIGHT SURFACE DASHBOARD)
-   Persis gaya visual Dashboard Desa Marga Mulya (KPI Cards + Bar Chart + Donut)
-   ========================================================================== */
 .bg-light-surface {
   background-color: #f8fafc;
 }
 
-/* KPI Top Cards */
 .kpi-mini-card {
   background: #ffffff;
   border-radius: 20px;
@@ -874,7 +818,6 @@ h6 {
   color: #64748b;
 }
 
-/* Analytics Box */
 .stat-analytics-box {
   background: #ffffff;
   border-radius: 20px;
@@ -893,7 +836,6 @@ h6 {
   border: 1px solid rgba(3, 23, 53, 0.08);
 }
 
-/* Visual Bar Chart (Sesuai Diagram Batang di Referensi) */
 .chart-bars-container {
   display: flex;
   justify-content: space-between;
@@ -932,28 +874,22 @@ h6 {
 }
 
 .chart-bar-fill.bar-navy {
-  background: #031735; /* Deep Navy */
-}
+  background: #031735; }
 
 .chart-bar-fill.bar-navy-light {
-  background: #1d4ed8; /* Royal Blue */
-}
+  background: #1d4ed8; }
 
 .chart-bar-fill.bar-cyan {
-  background: #0284c7; /* Ocean Blue */
-}
+  background: #0284c7; }
 
 .chart-bar-fill.bar-amber {
-  background: #0d9488; /* Deep Teal / Biru Kehijauan Posko */
-}
+  background: #0d9488; }
 
 .chart-bar-fill.bar-slate {
-  background: #6366f1; /* Indigo Slate */
-}
+  background: #6366f1; }
 
 .chart-bar-fill.bar-gray {
-  background: #38bdf8; /* Sky Blue */
-}
+  background: #38bdf8; }
 
 .chart-bar-tooltip {
   position: absolute;
@@ -988,7 +924,6 @@ h6 {
   max-width: 100%;
 }
 
-/* Donut Chart (Sesuai Referensi Penggunaan Lahan) */
 .donut-chart-circle {
   width: 130px;
   height: 130px;
@@ -1072,7 +1007,6 @@ h6 {
   color: var(--ps-navy-900);
 }
 
-/* Custom Progress Bars (Sesuai Referensi Tingkat Pendidikan) */
 .custom-progress-bar {
   height: 9px;
   border-radius: 50px;
@@ -1087,9 +1021,6 @@ h6 {
   background-color: #031735 !important;
 }
 
-/* ==========================================================================
-   DAFTAR BARANG (ITEMS CARDS & SEARCH FILTER)
-   ========================================================================== */
 .filter-btn-pill {
   border: 1.5px solid #e2e8f0;
   background: #ffffff;
@@ -1144,7 +1075,6 @@ h6 {
   box-shadow: 0 20px 35px -8px rgba(3, 23, 53, 0.12);
 }
 
-/* Photo Thumbnail Container */
 .item-visual-photo-wrap {
   height: 180px;
   position: relative;
@@ -1164,7 +1094,6 @@ h6 {
   transform: scale(1.06);
 }
 
-/* Clean Monochromatic Metadata Icons (Eliminating Clutter Colors) */
 .item-meta-clean {
   color: #64748b;
   font-size: 0.85rem;
@@ -1176,7 +1105,6 @@ h6 {
   flex-shrink: 0;
 }
 
-/* Clean Professional Action Buttons */
 .btn-action-card {
   border-radius: 12px;
   padding: 0.65rem 1rem;
@@ -1229,9 +1157,6 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* ==========================================================================
-   BOTTOM CTA SECTION (EXECUTIVE CONTACT FORM CARD #031735)
-   ========================================================================== */
 .section-cta-executive {
   padding-bottom: 90px;
 }
@@ -1270,9 +1195,6 @@ h6 {
   color: #94a3b8;
 }
 
-/* ==========================================================================
-   PENGUMUMAN & INFO LALU LINTAS KAMPUS (BENTO / EDITORIAL GRID)
-   ========================================================================== */
 .announcement-headline-card {
   background: var(--ps-brand-gradient);
   border-radius: 22px;
@@ -1312,7 +1234,6 @@ h6 {
   border-color: rgba(3, 23, 53, 0.15);
 }
 
-/* Mini Cards (6-grid pengumuman kanan) */
 .announcement-card-mini {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -1383,9 +1304,6 @@ h6 {
   color: #0284c7;
 }
 
-/* ==========================================================================
-   FOOTER (CURVED SEPARATOR + QUOTE + MAPS + BOTTOM BAR)
-   ========================================================================== */
 .footer-executive {
   background: var(--ps-navy-950);
   color: #94a3b8;
@@ -1396,12 +1314,10 @@ h6 {
   margin-top: -1px;
 }
 
-/* Curved Top Separator (Sesuai Referensi Desa Marga Mulya) */
 .footer-curve-separator {
   display: none;
 }
 
-/* Footer Nav & Contact Lists */
 .footer-nav-list,
 .footer-contact-list {
   list-style: none;
@@ -1450,7 +1366,6 @@ h6 {
   flex-shrink: 0;
 }
 
-/* Footer Quote Card (Rounded Box) */
 .footer-quote-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1477,7 +1392,6 @@ h6 {
   line-height: 1.6;
 }
 
-/* Footer Maps Box with Floating Buttons */
 .footer-maps-box {
   border-radius: 16px;
   overflow: hidden;
@@ -1549,7 +1463,6 @@ h6 {
   min-height: 240px;
 }
 
-/* Footer Bottom Bar & Scroll-to-Top Button */
 .footer-bottom-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.25rem 0;
@@ -1577,9 +1490,6 @@ h6 {
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
 }
 
-/* ==========================================================================
-   RESPONSIVE TWEAKS
-   ========================================================================== */
 @media (max-width: 991.98px) {
   .hero-section {
     padding-top: 110px;
@@ -1599,4 +1509,39 @@ h6 {
   .executive-cta-card {
     padding: 2.2rem 1.5rem;
   }
+}
+
+/* ==========================================================================
+   PAGINATION MODERN COMPONENT (NAVY THEME)
+   ========================================================================== */
+.pagination-modern .page-link {
+  color: var(--ps-navy-900);
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.pagination-modern .page-link:hover {
+  background-color: #f1f5f9;
+  border-color: var(--ps-navy-700);
+  color: var(--ps-navy-900);
+  transform: translateY(-1px);
+}
+
+.pagination-modern .page-item.active .page-link {
+  background-color: var(--ps-navy-900);
+  border-color: var(--ps-navy-900);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(3, 23, 53, 0.25);
+}
+
+.pagination-modern .page-item.disabled .page-link {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }

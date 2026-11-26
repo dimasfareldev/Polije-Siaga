@@ -1,200 +1,813 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polije Siaga</title>
-    <link rel="stylesheet" href="../css/barangHilang.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-logo">
-        <img
-          src="../img/logo-polije-siaga.webp"
-          alt="Polije Siaga Logo"
-          class="logo"
-        />
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lapor Barang Hilang - Polije Siaga</title>
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Iconify Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body class="bg-light">
+  <!-- 1. Sticky Glass Navbar (Persis Landing Page) -->
+  <header class="custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Brand Logo -->
+      <a href="../index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+        <img src="../img/logo-polije-siaga.webp" alt="Logo Polije Siaga" class="brand-logo-img" />
         <div>
-          <h1>Polije Siaga</h1>
-          <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+          <span class="d-block text-white fw-bold fs-5 lh-1 mb-1">Polije Siaga</span>
+          <small class="d-block fw-semibold lh-1" style="font-size: 0.72rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="../index.html" class="nav-link">Beranda</a>
+
+        <!-- Dropdown Layanan -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active d-flex align-items-center gap-1" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Layanan Keamanan
+          </a>
+          <ul class="dropdown-menu border-0 p-2">
+            <li>
+              <a class="dropdown-item-modern active" href="barangHilang.html">
+                <div>
+                  <div class="fw-semibold text-white">Lapor Barang Hilang</div>
+                  <div class="small text-muted" style="font-size: 0.75rem;">Buat pengajuan pencarian barang</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item-modern" href="barangTemukan.html">
+                <div>
+                  <div class="fw-semibold text-white">Lapor Barang Temuan</div>
+                  <div class="small text-muted" style="font-size: 0.75rem;">Serahkan barang ke posko satpam</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="../index.html#alur" class="nav-link">Alur Pelaporan</a>
+        <a href="../index.html#pengumuman" class="nav-link">Pengumuman</a>
+      </nav>
+
+      <!-- CTA & Mobile Trigger -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="../index.html#kontak" class="btn-glass d-none d-sm-inline-flex py-2 px-3 small">
+          <iconify-icon icon="lucide:phone-call"></iconify-icon>
+          <span>Posko 24 Jam</span>
+        </a>
+        <a href="formLaporanKehilangan.html" class="btn-modern-primary py-2 px-3 small">
+          <iconify-icon icon="lucide:plus-circle"></iconify-icon>
+          <span>Buat Laporan</span>
+        </a>
+
+        <!-- Offcanvas Mobile Button -->
+        <button class="btn btn-outline-light d-lg-none p-2 border-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <iconify-icon icon="lucide:menu" class="fs-4"></iconify-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end text-bg-dark border-0" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom border-secondary pb-3">
+      <div class="d-flex align-items-center gap-2">
+        <img src="../img/logo-polije-siaga.webp" alt="Logo" style="height: 34px;" />
+        <div>
+          <h5 class="offcanvas-title text-white fw-bold mb-0 fs-6" id="mobileMenuLabel">Polije Siaga</h5>
+          <small style="color: #1a5380; font-size: 0.72rem;">Pusat Keamanan Terpadu</small>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Beranda</a></li>
-          <li class="nav-layanan active">
-            <a href="javascript:void(0)" class="layanan-toggle">
-              <span>Layanan Keamanan</span>
-              <iconify-icon
-                icon="lucide:chevron-down"
-                class="arrow-icon"
-              ></iconify-icon>
-            </a>
-            <div class="layanan-keamanan-pop-up">
-              <a href="barangHilang.html">
-                <iconify-icon icon="solar:bag-cross-linear"></iconify-icon>
-                <span>Barang Hilang</span>
-              </a>
-              <a href="barangTemukan.html">
-                <iconify-icon icon="solar:bag-check-linear"></iconify-icon>
-                <span>Barang Ditemukan</span>
-              </a>
-            </div>
-          </li>
-          <li><a href="#">Pengumuman</a></li>
-          <li><a href="#">Kontak Darurat</a></li>
-        </ul>
-        <div class="humberger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="barang-hilang">
-        <h2>Pelaporan Barang Hilang</h2>
-        <p>
-          Silakan isi formulir berikut dengan informasi yang lengkap dan jelas
-          mengenai barang yang hilang. Laporan akan diteruskan kepada petugas
-          security Politeknik Negeri Jember untuk membantu proses pencarian dan
-          penanganan lebih lanjut.
-        </p>
-        <a href="formLaporanKehilangan.html"
-          >Laporkan Barang Hilang
-          <iconify-icon icon="bi:arrow-right-circle"></iconify-icon>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between pt-4">
+      <ul class="navbar-nav gap-3 fs-6">
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="../index.html">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0 fw-bold" href="barangHilang.html">Lapor Barang Hilang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="barangTemukan.html">Lapor Barang Temuan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="../index.html#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="../index.html#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
+        </li>
+      </ul>
+      <div class="pt-4 border-top border-secondary">
+        <a href="formLaporanKehilangan.html" class="btn btn-primary w-100 py-2 fw-semibold mb-2"
+          style="background: #1d4ed8; border-color: #1d4ed8;">
+          Buat Laporan Hilang
         </a>
-      </section>
-      <section class="list-barang-hilang">
-        <div class="list-barang-hilang-header">
-          <div class="underline kiri"></div>
-          <h2 class="list-barang-hilang-title">DAFTAR BARANG HILANG</h2>
-          <div class="underline kanan"></div>
-        </div>
-        <p>
-          Laporkan barang yang ditemukan atau kehilangan barang di lingkungan
-          kampus dengan mudah melalui Polije Siaga.
-        </p>
-        <div class="daftar-barang">
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="../img/dompet.webp" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="../img/dompet.webp" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="../img/dompet.webp" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="card-barang-hilang">
-              <img src="../img/dompet.webp" alt="Barang Hilang 1" />
-              <h3>Dompet Kulit</h3>
-              <a href="detailbaranghilang.html">Detail</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <section class="header-logo-footer">
-        <div class="header-logo-footer-content">
-          <img
-            src="../img/logo-polije-siaga.webp"
-            alt="Polije Siaga Logo"
-            class="logo"
-          />
-          <div>
-            <h1>Polije Siaga</h1>
-            <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
-          </div>
-        </div>
-        <p class="copyright">
-          Copyright Polije Siaga@2026 - All Right Reserved by Brazil Cabang
-          Jember
-        </p>
-      </section>
-      <section class="footer-kontak">
-        <p>
-          <iconify-icon icon="akar-icons:phone"></iconify-icon
-          ><span>Contact:</span> 08123456789 (Admin)
-        </p>
-        <p>
-          <iconify-icon icon="carbon:email"></iconify-icon
-          ><span>Email:</span> security@polijesiaga.com
-        </p>
-      </section>
-      <section class="footer-navigation">
-        <a href="#">Beranda</a>
-        <a href="#">Layanan Keamanan</a>
-        <a href="#">Pengumuman</a>
-        <a href="#">Kontak Darurat</a>
-      </section>
-    </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+        <a href="../index.html#kontak" class="btn btn-outline-light w-100 py-2 fw-semibold">
+          Hubungi Posko Satpam
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <script>
-      const header = document.querySelector("header");
+  <main>
+    <!-- Hero Banner / Page Intro -->
+    <section class="py-5" style="background: linear-gradient(135deg, #031735 0%, #072554 100%); position: relative; overflow: hidden;">
+      <div class="container py-lg-4 position-relative" style="z-index: 2;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-10" data-aos="fade-up">
+            <span class="badge-soft-primary mb-3">Layanan Posko Keamanan</span>
+            <h1 class="display-6 fw-bold text-white mb-3">Pusat Pelaporan &amp; Pencarian Barang Hilang</h1>
+            <p class="text-light text-opacity-75 mb-4 fs-6" style="max-width: 680px; line-height: 1.7;">
+              Kehilangan barang di lingkungan kampus Politeknik Negeri Jember? Buat laporan resmi secara online untuk mempercepat koordinasi dengan posko pengamanan dan petugas patroli kampus.
+            </p>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a href="formLaporanKehilangan.html" class="btn btn-light rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center gap-2 shadow-sm" style="color: #031735;">
+                <iconify-icon icon="lucide:file-plus" class="fs-5"></iconify-icon>
+                <span>Laporkan Barang Hilang</span>
+              </a>
+              <a href="#daftar-laporan" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+                <span>Lihat Barang Dicari</span>
+                <iconify-icon icon="lucide:arrow-down"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
+    <!-- Section Daftar Barang Hilang (Katalog Card Sesuai Landing Page) -->
+    <section class="py-5" id="daftar-laporan">
+      <div class="container py-lg-4">
+        <!-- Section Header + Search Filter -->
+        <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
+          <div class="col-lg-7">
+            <h2 class="display-6 fw-bold text-navy mb-2">Daftar Barang Hilang Sedang Dicari</h2>
+            <p class="text-muted mb-0">
+              Berikut daftar barang milik mahasiswa atau civitas akademika yang dilaporkan hilang dan dalam proses penelusuran posko.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="position-relative">
+              <iconify-icon icon="lucide:search" class="position-absolute text-muted fs-5"
+                style="left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;"></iconify-icon>
+              <input type="text" id="searchInput" class="form-control search-input-pill"
+                placeholder="Cari nama barang atau lokasi..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter 7 Kategori Sesuai Permintaan -->
+        <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up">
+          <button class="filter-btn-pill active" data-filter="all">
+            Semua Kategori (10)
+          </button>
+          <button class="filter-btn-pill" data-filter="dompet">
+            Dompet &amp; KTM
+          </button>
+          <button class="filter-btn-pill" data-filter="kunci">
+            Kunci Kontak
+          </button>
+          <button class="filter-btn-pill" data-filter="elektronik">
+            Elektronik &amp; Gadget
+          </button>
+          <button class="filter-btn-pill" data-filter="laptop">
+            Laptop &amp; Komputer
+          </button>
+          <button class="filter-btn-pill" data-filter="dokumen">
+            Berkas &amp; Buku
+          </button>
+          <button class="filter-btn-pill" data-filter="pakaian">
+            Helm &amp; Jaket
+          </button>
+          <button class="filter-btn-pill" data-filter="lainnya">
+            Lain-lain
+          </button>
+        </div>
+
+        <!-- Items Grid (Struktur Persis Kartu Landing Page) -->
+        <div class="row g-4" id="lostItemsGrid">
+          <!-- Item 1: Dompet Kulit Dunhill (Kategori: Dompet & KTM) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="dompet" data-aos="fade-up" data-aos-delay="100">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/dompet-dunhill.webp" alt="Dompet Kulit Dunhill" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Dompet Kulit Dunhill</h5>
+                <p class="text-muted small mb-3">
+                  Dompet lipat kulit tekstur warna coklat tan merk Dunhill berisi KTM dan kartu penting.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Parkir Barat Kampus 1</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 08:30 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Dimas Farel</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Kunci Motor Honda (Kategori: Kunci Kontak) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="kunci" data-aos="fade-up" data-aos-delay="150">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/kunci-honda.webp" alt="Kunci Motor Honda" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Kunci Motor Honda</h5>
+                <p class="text-muted small mb-3">
+                  Kunci kontak motor Honda hitam beserta 2 gantungan karakter (Patrick Star &amp; Baby Shark).
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Gedung As-Salam Lantai 1</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 10:15 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Ahmad Fauzi</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Earphone Kabel Putih (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="200">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/earphone-putih.webp" alt="Earphone Kabel Putih 3.5mm" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Earphone Kabel Putih</h5>
+                <p class="text-muted small mb-3">
+                  Earphone in-ear kabel warna putih jack audio 3.5mm tertinggal di area laboratorium.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Lab Komputer Gedung TI</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 13:40 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Siti Nurhaliza</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Mouse Olike Wireless (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="250">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/mouse-olike.webp" alt="Mouse Wireless Olike Pink" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Mouse Olike Wireless</h5>
+                <p class="text-muted small mb-3">
+                  Mouse tanpa kabel merk Olike warna pink dengan tombol scroll oranye dan tombol DPI.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Ruang Kuliah TI Gedung A</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 11:45 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Nabila Putri</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Laptop Lenovo Ideapad (Kategori: Laptop & Komputer) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="laptop" data-aos="fade-up" data-aos-delay="300">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/laptop.webp" alt="Laptop Lenovo Ideapad" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Laptop Lenovo Ideapad</h5>
+                <p class="text-muted small mb-3">
+                  Unit laptop Lenovo warna abu-abu gelap dengan stiker prodi TI tertinggal di meja ruang seminar.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Ruang Seminar Gedung Pascasarjana</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>25 Okt 2026, 15:30 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Bima Wicaksono</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Flashdisk Cruzer 32GB (Kategori: Elektronik & Gadget) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="elektronik" data-aos="fade-up" data-aos-delay="350">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/flashdisk.webp" alt="Flashdisk Sandisk Cruzer" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Flashdisk Sandisk 32GB</h5>
+                <p class="text-muted small mb-3">
+                  Flashdisk warna hitam merah bertali gantungan biru berisi file tugas akhir perkuliahan.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Perpustakaan Lt. 2</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>25 Okt 2026, 11:15 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Rian Pratama</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Kunci Motor Beat Gantungan Dompet (Kategori: Kunci Kontak) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="kunci" data-aos="fade-up" data-aos-delay="400">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/kunci-motor.webp" alt="Kunci Motor Honda Beat" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Kunci Motor Honda Beat</h5>
+                <p class="text-muted small mb-3">
+                  Kunci motor dengan gantungan silikon hitam dan remote alarm, tertinggal di kantong parkir timur.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Parkir Timur Terpadu Polije</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>26 Okt 2026, 09:10 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Kevin Sanjaya</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Dompet Lipat Hitam & Kartu Mahasiswa (Kategori: Dompet & KTM) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="dompet" data-aos="fade-up" data-aos-delay="450">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/dompet.webp" alt="Dompet Kulit Hitam" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Dompet Lipat Hitam</h5>
+                <p class="text-muted small mb-3">
+                  Dompet kulit sintetis hitam berisikan KTM, SIM C, dan kartu akses parkir gedung perkuliahan.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Area Kantin Pusat Polije</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>26 Okt 2026, 12:45 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Riska Amelia</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9: Buku Catatan & Binder Kuliah (Kategori: Berkas & Buku) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="dokumen" data-aos="fade-up" data-aos-delay="500">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/mencari-barang-1.webp" alt="Binder Kuliah Biru" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Binder Catatan &amp; Modul</h5>
+                <p class="text-muted small mb-3">
+                  Binder warna biru navy berisikan catatan praktikum workshop desain dan berkas proposal tim.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Gedung Jurusan TI Lt. 2</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>26 Okt 2026, 14:10 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Dwi Lestari</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 10: Jaket Parka Polije Hijau Army (Kategori: Helm & Jaket) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="pakaian" data-aos="fade-up" data-aos-delay="550">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="../img/alur-isi-formulir.webp" alt="Jaket Parka Polije" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Jaket Jurusan Hijau Army</h5>
+                <p class="text-muted small mb-3">
+                  Jaket angkatan warna hijau army dengan emblem bendera dan bordir jurusan Teknologi Informasi.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Auditorium Gedung As-Salam</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>26 Okt 2026, 16:30 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Bagas Prakoso</span>
+                  </div>
+                </div>
+                <a href="DetailBarangHilang.html" class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination Controls (Tampil jika > 8 item) -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 mt-5 pt-3" id="paginationWrapper" data-aos="fade-up">
+          <div class="text-muted small" id="paginationInfo">
+            Menampilkan <span class="fw-bold text-navy" id="pageStart">1</span> - <span class="fw-bold text-navy" id="pageEnd">8</span> dari <span class="fw-bold text-navy" id="totalItems">10</span> laporan
+          </div>
+          <nav aria-label="Navigasi Halaman Laporan">
+            <ul class="pagination pagination-modern mb-0 gap-1" id="paginationList">
+              <!-- Rendered dynamically by JavaScript -->
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Banner Panduan Cepat Menemukan Barang -->
+        <div class="p-4 p-lg-5 rounded-4 mt-5 border text-white position-relative overflow-hidden" 
+          style="background: linear-gradient(135deg, #031735 0%, #0e3d6b 100%);" data-aos="fade-up">
+          <div class="row align-items-center g-4 position-relative" style="z-index: 2;">
+            <div class="col-lg-8">
+              <h3 class="fw-bold mb-2">Merasa Barang Anda Telah Ditemukan Seseorang?</h3>
+              <p class="text-light text-opacity-75 mb-0" style="line-height: 1.6;">
+                Cek juga daftar barang temuan yang telah diserahkan mahasiswa atau petugas ke posko keamanan. Anda dapat langsung mengklaimnya dengan menunjukkan bukti kepemilikan sah.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="barangTemukan.html" class="btn btn-light rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center gap-2 shadow-sm" style="color: #031735;">
+                <span>Lihat Barang Temuan</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Konsisten Sesuai Landing Page -->
+  <footer class="footer-executive position-relative">
+    <a href="#daftar-laporan" class="footer-scroll-top-btn position-absolute" style="top: 24px; right: 36px; z-index: 10;" title="Kembali ke Atas" aria-label="Kembali ke Atas">
+      <iconify-icon icon="lucide:arrow-up"></iconify-icon>
+    </a>
+
+    <div class="container pt-5 pb-4">
+      <div class="row g-4 pb-5">
+        <div class="col-lg-3 col-md-6">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="../img/logo-polije-siaga.webp" alt="Logo Polije Siaga" style="height: 44px; width: auto;" />
+            <div>
+              <h5 class="text-white fw-bold mb-0">Polije Siaga</h5>
+              <small class="fw-semibold" style="font-size: 0.75rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
+            </div>
+          </div>
+          <p class="small text-light text-opacity-75 mb-0" style="line-height: 1.6;">
+            Sistem informasi keamanan dan pengelolaan barang hilang/temuan resmi Politeknik Negeri Jember yang transparan dan sigap 24 jam.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Jelajahi</h6>
+          <ul class="footer-nav-list">
+            <li><a href="../index.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Beranda</a></li>
+            <li><a href="../index.html#layanan"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Layanan</a></li>
+            <li><a href="../index.html#alur"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Alur Prosedur</a></li>
+            <li><a href="../index.html#kontak"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Informasi</h6>
+          <ul class="footer-nav-list">
+            <li><a href="../index.html#statistik"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Statistik</a></li>
+            <li><a href="../index.html#pengumuman"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Pengumuman</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Layanan Utama</h6>
+          <ul class="footer-nav-list">
+            <li><a href="barangHilang.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Lapor Hilang</a></li>
+            <li><a href="barangTemukan.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Lapor Temuan</a></li>
+            <li><a href="../index.html#alur"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Verifikasi &amp; Klaim</a></li>
+            <li><a href="../index.html#kontak"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Panggilan Darurat</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Kontak Posko</h6>
+          <ul class="footer-contact-list">
+            <li>
+              <iconify-icon icon="lucide:map-pin"></iconify-icon>
+              <span>Jl. Mastrip PO Box 164, Sumbersari, Jember</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:phone"></iconify-icon>
+              <span>+62 812-3456-7890</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:mail"></iconify-icon>
+              <span>security@polije.ac.id</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:clock"></iconify-icon>
+              <span>Siaga 24 Jam Non-Stop</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container text-center">
+        <p class="mb-0 small text-light text-opacity-50">
+          &copy; 2026 Politeknik Negeri Jember &bull; Polije Siaga. Hak cipta dilindungi undang-undang.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 750,
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+
+    // Realtime Search, Category Filtering, & Dynamic Pagination (> 8 items)
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn-pill');
+    const cardCols = Array.from(document.querySelectorAll('.report-card-col'));
+    const paginationWrapper = document.getElementById('paginationWrapper');
+    const paginationList = document.getElementById('paginationList');
+    const pageStartEl = document.getElementById('pageStart');
+    const pageEndEl = document.getElementById('pageEnd');
+    const totalItemsEl = document.getElementById('totalItems');
+
+    const ITEMS_PER_PAGE = 8;
+    let currentFilter = 'all';
+    let currentPage = 1;
+
+    function renderPagination(totalFiltered) {
+      if (totalFiltered <= ITEMS_PER_PAGE) {
+        paginationWrapper.style.display = 'none';
+        return;
+      }
+
+      paginationWrapper.style.display = 'flex';
+      const totalPages = Math.ceil(totalFiltered / ITEMS_PER_PAGE);
+
+      // Clamp currentPage
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      // Update text info
+      const startIdx = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+      const endIdx = Math.min(currentPage * ITEMS_PER_PAGE, totalFiltered);
+      pageStartEl.textContent = startIdx;
+      pageEndEl.textContent = endIdx;
+      totalItemsEl.textContent = totalFiltered;
+
+      // Render pagination buttons
+      let html = '';
+
+      // Prev Button
+      html += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+          <button class="page-link rounded-pill px-3 py-1 fw-semibold d-flex align-items-center gap-1" data-page="${currentPage - 1}" aria-label="Sebelumnya">
+            <iconify-icon icon="lucide:chevron-left"></iconify-icon>
+            <span class="d-none d-sm-inline">Sebelumnya</span>
+          </button>
+        </li>
+      `;
+
+      // Page Numbers
+      for (let i = 1; i <= totalPages; i++) {
+        html += `
+          <li class="page-item ${i === currentPage ? 'active' : ''}">
+            <button class="page-link rounded-circle fw-bold" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 0;" data-page="${i}">
+              ${i}
+            </button>
+          </li>
+        `;
+      }
+
+      // Next Button
+      html += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+          <button class="page-link rounded-pill px-3 py-1 fw-semibold d-flex align-items-center gap-1" data-page="${currentPage + 1}" aria-label="Berikutnya">
+            <span class="d-none d-sm-inline">Berikutnya</span>
+            <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+          </button>
+        </li>
+      `;
+
+      paginationList.innerHTML = html;
+
+      // Bind events to pagination buttons
+      paginationList.querySelectorAll('button.page-link').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetPage = parseInt(btn.getAttribute('data-page'), 10);
+          if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages && targetPage !== currentPage) {
+            currentPage = targetPage;
+            applyFilterAndSearch();
+            // Smooth scroll back to grid top
+            document.getElementById('daftar-laporan').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    function applyFilterAndSearch() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+
+      // Filter matched items
+      const matchedCards = cardCols.filter(col => {
+        const category = col.getAttribute('data-category');
+        const textContent = col.textContent.toLowerCase();
+
+        const matchFilter = (currentFilter === 'all') || (category === currentFilter);
+        const matchSearch = query === '' || textContent.includes(query);
+        return matchFilter && matchSearch;
+      });
+
+      // Pagination calculations
+      const totalFiltered = matchedCards.length;
+      const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+      const endIndex = startIndex + ITEMS_PER_PAGE;
+
+      // Hide all first
+      cardCols.forEach(col => col.style.display = 'none');
+
+      // Show slice for current page
+      matchedCards.forEach((col, index) => {
+        if (index >= startIndex && index < endIndex) {
+          col.style.display = '';
         }
       });
 
-      const navLinks = document.querySelectorAll("nav ul li a");
-      const sections = document.querySelectorAll("main section");
+      renderPagination(totalFiltered);
+    }
 
-      const navLayanan = document.querySelector(".nav-layanan");
-      const layananToggle = document.querySelector(".layanan-toggle");
-      const layananPopUp = document.querySelector(".layanan-keamanan-pop-up");
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        currentPage = 1; // Reset to page 1 on filter change
+        applyFilterAndSearch();
+      });
+    });
 
-      if (layananToggle && layananPopUp) {
-        layananToggle.addEventListener("click", function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          layananPopUp.classList.toggle("show");
-          if (navLayanan) {
-            navLayanan.classList.toggle("show");
-          }
-        });
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        currentPage = 1; // Reset to page 1 on search
+        applyFilterAndSearch();
+      });
+    }
 
-        document.addEventListener("click", function (event) {
-          if (
-            !layananPopUp.contains(event.target) &&
-            !layananToggle.contains(event.target)
-          ) {
-            layananPopUp.classList.remove("show");
-            if (navLayanan) {
-              navLayanan.classList.remove("show");
-            }
-          }
-        });
-      }
-    </script>
-  </body>
+    // Initial run
+    applyFilterAndSearch();
+  </script>
+</body>
+
 </html>
