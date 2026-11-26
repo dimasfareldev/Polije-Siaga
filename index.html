@@ -1,372 +1,1338 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polije Siaga</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-logo">
-        <img
-          src="img/logo-polije-siaga.webp"
-          alt="Polije Siaga Logo"
-          class="logo"
-        />
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polije Siaga - Pusat Informasi & Keamanan Kampus</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Iconify Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+
+  <!-- Custom Modern CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- 1. Sticky Glass Navbar -->
+  <header class="custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+        <img src="img/logo-polije-siaga.webp" alt="Logo Polije Siaga" class="brand-logo-img" />
         <div>
-          <h1>Polije Siaga</h1>
-          <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
+          <span class="d-block text-white fw-bold fs-5 lh-1 mb-1">Polije Siaga</span>
+          <small class="d-block fw-semibold lh-1" style="font-size: 0.72rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="#beranda" class="nav-link active">Beranda</a>
+
+        <!-- Dropdown Layanan -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Layanan Keamanan
+          </a>
+          <ul class="dropdown-menu border-0 p-2">
+            <li>
+              <a class="dropdown-item-modern" href="pages/barangHilang.html">
+                <div>
+                  <div class="fw-semibold text-white">Lapor Barang Hilang</div>
+                  <div class="small text-muted" style="font-size: 0.75rem;">Buat pengajuan pencarian barang</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item-modern" href="pages/barangTemukan.html">
+                <div>
+                  <div class="fw-semibold text-white">Lapor Barang Temuan</div>
+                  <div class="small text-muted" style="font-size: 0.75rem;">Serahkan barang ke posko satpam</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#alur" class="nav-link">Alur Pelaporan</a>
+        <a href="#pengumuman" class="nav-link">Pengumuman</a>
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="#kontak" class="btn-glass d-none d-sm-inline-flex py-2 px-3 small">
+          <iconify-icon icon="lucide:phone-call"></iconify-icon>
+          <span>Posko 24 Jam</span>
+        </a>
+        <a href="#laporan" class="btn-modern-primary py-2 px-3 small">
+          <iconify-icon icon="lucide:search"></iconify-icon>
+          <span>Cari Barang</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="btn btn-outline-light d-lg-none p-2 border-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <iconify-icon icon="lucide:menu" class="fs-4"></iconify-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end text-bg-dark border-start border-secondary" tabindex="-1" id="mobileMenu"
+    aria-labelledby="mobileMenuLabel" style="background: #071527 !important;">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuLabel">
+        <iconify-icon icon="lucide:shield-check" class="text-warning fs-4"></iconify-icon>
+        <span>POLIJE SIAGA</span>
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+      <ul class="nav flex-column gap-3 fs-5">
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="#beranda" data-bs-dismiss="offcanvas">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="pages/barangHilang.html">Lapor Barang Hilang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="pages/barangTemukan.html">Lapor Barang Temuan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="#alur" data-bs-dismiss="offcanvas">Alur Pelaporan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ps-0" href="#pengumuman" data-bs-dismiss="offcanvas">Pengumuman</a>
+        </li>
+      </ul>
+      <div class="pt-4 border-top border-secondary">
+        <a href="#kontak" class="btn btn-modern-primary w-100" data-bs-dismiss="offcanvas">
+          Hubungi Posko Satpam
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 2. Hero Section (Inspirasi Layout Desa Marga Mulya - Clean Left Hero + Bottom Pill Ribbon) -->
+    <section class="hero-section hero-nature-style" id="beranda">
+      <!-- Overlay Gradasi Gelap Elegan Sisi Kiri -->
+      <div class="hero-left-vignette"></div>
+
+      <div class="container position-relative hero-main-container">
+        <div class="row">
+          <div class="col-lg-7 col-xl-6" data-aos="fade-right" data-aos-duration="900">
+            <h1 class="hero-clean-title mb-3">
+              Keamanan Terpadu,<br />
+              untuk Kampus Polije
+            </h1>
+            <div class="hero-title-divider mb-4"></div>
+            <p class="hero-clean-desc mb-4">
+              Siaga, Transparan, dan Responsif &mdash; Menjaga ketertiban lingkungan kampus, pelayanan laporan barang
+              hilang, dan pengamanan barang temuan Politeknik Negeri Jember.
+            </p>
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <a href="#layanan" class="btn-hero-solid">
+                <span>Jelajahi Layanan</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+              <a href="#kontak" class="btn-hero-outline">
+                <span>Kontak Posko</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#" class="active">Beranda</a></li>
-          <li class="nav-layanan">
-            <a href="javascript:void(0)" class="layanan-toggle">
-              <span>Layanan Keamanan</span>
-              <iconify-icon icon="lucide:chevron-down" class="arrow-icon"></iconify-icon>
-            </a>
-            <div class="layanan-keamanan-pop-up">
-              <a href="pages/barangHilang.html">
-                <iconify-icon icon="solar:bag-cross-linear"></iconify-icon>
-                <span>Barang Hilang</span>
-              </a>
-              <a href="pages/barangTemukan.html">
-                <iconify-icon icon="solar:bag-check-linear"></iconify-icon>
-                <span>Barang Ditemukan</span>
-              </a>
-            </div>
-          </li>
-          <li><a href="#">Pengumuman</a></li>
-          <li><a href="#">Kontak Darurat</a></li>
-        </ul>
-        <div class="humberger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="beranda">
-        <div class="beranda-details">
-          <div class="berandaInformation">
-            <h2>
-              Selamat Datang di
-              <br />
-              POLIJE SIAGA
-            </h2>
-            <p>
-              Polije Siaga hadir sebagai pusat informasi keamanan kampus yang
-              memudahkan civitas akademika dalam melaporkan barang hilang,
-              menemukan barang yang telah dilaporkan, mendapatkan informasi
-              terkait kondisi keamanan kampus, serta mengakses kontak darurat.
-            </p>
-            <button>
-              Tentang Polije Siaga
-              <iconify-icon icon="bi:arrow-right-circle"></iconify-icon>
-            </button>
-          </div>
-          <div class="beranda-image">
-            <div class="oval one"></div>
-            <div class="oval two"></div>
-            <div class="oval three"></div>
-            <div class="container-image">
-              <img src="img/satpam-polije.webp" alt="Para Satpam" />
-              <span>Satpam Polije</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="layanan-keamanan">
-        <div class="layanan-keamanan-header">
-          <div class="underline"></div>
-          <h2 class="layanan-keamanan-title">LAYANAN KEAMANAN</h2>
-          <div class="underline"></div>
-        </div>
-        <p class="p">
-          Laporkan barang yang ditemukan atau kehilangan barang di lingkungan
-          kampus dengan mudah melalui Polije Siaga.
-        </p>
-        <div class="layanan-card">
-          <div class="border-left">
-            <div class="layanan-card-item">
-              <img src="img/mencari-barang-1.webp" alt="Mencari Barang" />
-              <div class="card-information">
-                <h3>Menemukan barang yang tertinggal ?</h3>
-                <p>
-                  Laporkan barang temuanmu agar dapat segera diamankan dan
-                  dikembalikan kepada pemiliknya.
-                </p>
-                <button>Laporkan</button>
+
+      <!-- Floating Bottom Stats Pill Card (Persis Seperti di Gambar Referensi Bawah) -->
+      <div class="hero-bottom-pill-wrapper">
+        <div class="container">
+          <div class="hero-bottom-pill-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="row g-0 align-items-center text-center">
+              <!-- Stat Item 1 -->
+              <div class="col-6 col-md-3 pill-stat-col">
+                <div class="pill-stat-val">
+                  <span class="counter-number" data-target="148">0</span>
+                </div>
+                <div class="pill-stat-lbl">Laporan Masuk</div>
               </div>
-            </div>
-          </div>
-          <div class="border-left">
-            <div class="layanan-card-item">
-              <img src="img/mencari-barang-2.webp" alt="Mencari Barang" />
-              <div class="card-information">
-                <h3>Menemukan barang yang tertinggal ?</h3>
-                <p>
-                  Laporkan barang temuanmu agar dapat segera diamankan dan
-                  dikembalikan kepada pemiliknya.
-                </p>
-                <button>Laporkan</button>
+
+              <!-- Stat Item 2 -->
+              <div class="col-6 col-md-3 pill-stat-col">
+                <div class="pill-stat-val">
+                  <span class="counter-number" data-target="129">0</span><span class="unit">Item</span>
+                </div>
+                <div class="pill-stat-lbl">Barang Diamankan</div>
+              </div>
+
+              <!-- Stat Item 3 -->
+              <div class="col-6 col-md-3 pill-stat-col">
+                <div class="pill-stat-val">
+                  <span class="counter-number" data-target="24">0</span><span class="unit">Jam</span>
+                </div>
+                <div class="pill-stat-lbl">Siaga Petugas Pos</div>
+              </div>
+
+              <!-- Stat Item 4 -->
+              <div class="col-6 col-md-3 pill-stat-col last">
+                <div class="pill-stat-val">
+                  <span class="counter-number" data-target="87">0</span><span class="unit">%</span>
+                </div>
+                <div class="pill-stat-lbl">Klaim Terverifikasi</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="alur-pelaporan">
-        <div class="layanan-keamanan-header">
-          <div class="underline"></div>
-          <h2 class="layanan-keamanan-title">ALUR PELAPORAN</h2>
-          <div class="underline"></div>
-        </div>
-        <p class="p">
-          Tiga langkah untuk mengurus barang temuan atau kehilangan di kampus
-          polije
-        </p>
-        <div class="card-alur">
-          <div class="alur-item" data-aos="fade-up-right">
-            <h3>1</h3>
-            <p>
-              Laporan detail spesifik barang (warna, ciri khusus, lokasi
-              terakhir, waktu kejadian) melalui form portal Polije Siaga
-            </p>
-          </div>
-          <div class="alur-item" data-aos="zoom-in-up">
-            <h3>2</h3>
-            <p>
-              Tim satpam polije akan mencocokkan data laporan dengan database
-              fisik barang yang tersimpan di posko keamanan
-            </p>
-          </div>
-          <div class="alur-item" data-aos="fade-left">
-            <h3>3</h3>
-            <p>
-              Laporan detail spesifik barang (warna, ciri khusus, lokasi
-              terakhir, waktu kejadian) melalui form portal Polije Siaga
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="daftar-barang">
-        <p class="update"><span></span> Update Terkini</p>
-        <div class="headers-judul">
-          <h2>Daftar Laporan Barang Hilang & Temuan</h2>
-          <div></div>
-        </div>
-        <div class="headers-deskripsi">
-          <p>
-            Pantau status barang hilang yang sedang dicari dan barang temuan
-            yang telah diamankan di Posko Satpam Polije.
+      </div>
+    </section>
+
+    <!-- 4. What We Can Help With (4 White Rounded Cards) -->
+    <section class="py-5" id="layanan">
+      <div class="container py-lg-4">
+        <!-- Section Heading -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge-soft-primary mb-2">Fasilitas & Layanan</span>
+          <h2 class="display-6 fw-bold text-navy">Layanan Keamanan Kampus</h2>
+          <p class="text-muted mx-auto" style="max-width: 580px;">
+            Pusat fasilitas terpadu penanganan barang hilang, temuan, dan bantuan keamanan kampus Polije.
           </p>
-          <div class="search-box">
-            <iconify-icon
-              icon="akar-icons:search"
-              width="18"
-              height="18"
-            ></iconify-icon>
-            <input type="text" placeholder="Cari nama barang atau lokasi..." />
-          </div>
         </div>
-        <div class="headers-filter">
-          <button type="button" class="button-filter">Semua (24)</button>
-          <button type="button" class="button-filter red">
-            <span></span> Barang Hilang (Dicari)
-          </button>
-          <button type="button" class="button-filter green">
-            <span></span> Barang Temuan (Diamankan)
-          </button>
-        </div>
-        <div class="card-barang">
-          <div class="card-item">
-            <img src="img/dompet.webp" alt="Gambar Barang" />
-            <div class="card-item-details">
-              <h3>Dompet Kulit</h3>
-              <p class="card-item-details-description">
-                Dompet kulit berwarna coklat pekat dengan merk dunhill.
-              </p>
-              <p>
-                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
-                Barat Kampus
-              </p>
-              <p>
-                <time datetime="2024-10-24T08:55:00Z"
-                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
-                  2024, 08:55 WIB</time
-                >
-              </p>
-              <p>
-                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
-                Petugas Kebersihan
-              </p>
-              <a href="#" class="button-daftar-barang red">Klaim di Pos 1</a>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="img/kunci-motor.webp" alt="Gambar Barang" />
-            <div class="card-item-details">
-              <h3>Kunci Motor Honda Vario</h3>
-              <p class="card-item-details-description">
-                Gantungan karet motif pita merah dengan remote alarm bawaan
-                Honda.
-              </p>
-              <p>
-                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
-                Barat Kampus
-              </p>
-              <p>
-                <time datetime="2024-10-24T08:55:00Z"
-                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
-                  2024, 08:55 WIB</time
-                >
-              </p>
-              <p>
-                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
-                Petugas Kebersihan
-              </p>
-              <a href="#" class="button-daftar-barang green">Klaim di Pos 1</a>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="img/laptop.webp" alt="Gambar Barang" />
-            <div class="card-item-details">
-              <h3>Laptop Acer</h3>
-              <p class="card-item-details-description">
-                Laptop merk acer berwarna silver.
-              </p>
-              <p>
-                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
-                Barat Kampus
-              </p>
-              <p>
-                <time datetime="2024-10-24T08:55:00Z"
-                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
-                  2024, 08:55 WIB</time
-                >
-              </p>
-              <p>
-                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
-                Petugas Kebersihan
-              </p>
-              <a href="#" class="button-daftar-barang red">Klaim di Pos 1</a>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="img/flashdisk.webp" alt="Gambar Barang" />
-            <div class="card-item-details">
-              <h3>Flashdisk 16 GB</h3>
-              <p class="card-item-details-description">
-                Flashdisk ukuran 16 GB dengan kabel berwarna silver.
-              </p>
-              <p>
-                <iconify-icon icon="akar-icons:location"></iconify-icon>Parkir
-                Barat Kampus
-              </p>
-              <p>
-                <time datetime="2024-10-24T08:55:00Z"
-                  ><iconify-icon icon="bx:time-five"></iconify-icon> 24 Oktober
-                  2024, 08:55 WIB</time
-                >
-              </p>
-              <p>
-                <iconify-icon icon="andrsrxn:user"></iconify-icon>Ditemukan:
-                Petugas Kebersihan
-              </p>
-              <a href="#" class="button-daftar-barang green">Klaim di Pos 1</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <section class="header-logo-footer">
-        <div class="header-logo-footer-content">
-          <img
-            src="img/logo-polije-siaga.webp"
-            alt="Polije Siaga Logo"
-            class="logo"
-          />
-          <div>
-            <h1>Polije Siaga</h1>
-            <p>Sistem informasi Keamanan dan Penjagaan Polije</p>
-          </div>
-        </div>
-        <p class="copyright">
-          Copyright Polije Siaga@2026 - All Right Reserved by Brazil Cabang
-          Jember
-        </p>
-      </section>
-      <section class="footer-kontak">
-        <p>
-          <iconify-icon icon="akar-icons:phone"></iconify-icon
-          ><span>Contact:</span> 08123456789 (Admin)
-        </p>
-        <p>
-          <iconify-icon icon="carbon:email"></iconify-icon
-          ><span>Email:</span> security@polijesiaga.com
-        </p>
-      </section>
-      <section class="footer-navigation">
-        <a href="#">Beranda</a>
-        <a href="#">Layanan Keamanan</a>
-        <a href="#">Pengumuman</a>
-        <a href="#">Kontak Darurat</a>
-      </section>
-    </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
 
-    <script>
-      const header = document.querySelector("header");
+        <!-- 4 Cards Grid -->
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-feature-card">
+              <div class="service-icon-circle">
+                <iconify-icon icon="lucide:package-check"></iconify-icon>
+              </div>
+              <h4 class="h5 fw-bold mb-2">Lapor Barang Temuan</h4>
+              <p class="text-muted small mb-4">
+                Pencatatan dan pengamanan barang yang tertinggal di area kampus agar segera dikembalikan ke pemiliknya.
+              </p>
+              <a href="pages/barangTemukan.html" class="link-arrow-hover">
+                <span>Form Temuan</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+            </div>
+          </div>
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-feature-card">
+              <div class="service-icon-circle">
+                <iconify-icon icon="lucide:search"></iconify-icon>
+              </div>
+              <h4 class="h5 fw-bold mb-2">Lapor Barang Hilang</h4>
+              <p class="text-muted small mb-4">
+                Pengajuan laporan pencarian barang hilang bagi mahasiswa, dosen, maupun staf civitas akademika.
+              </p>
+              <a href="pages/barangHilang.html" class="link-arrow-hover">
+                <span>Form Kehilangan</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-feature-card">
+              <div class="service-icon-circle">
+                <iconify-icon icon="lucide:file-check-2"></iconify-icon>
+              </div>
+              <h4 class="h5 fw-bold mb-2">Verifikasi & Klaim</h4>
+              <p class="text-muted small mb-4">
+                Pencocokan identitas bukti kepemilikan dan pengambilan fisik barang secara resmi di Posko Satpam.
+              </p>
+              <a href="#alur" class="link-arrow-hover">
+                <span>Lihat Prosedur</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-feature-card">
+              <div class="service-icon-circle">
+                <iconify-icon icon="lucide:phone-forwarded"></iconify-icon>
+              </div>
+              <h4 class="h5 fw-bold mb-2">Panggilan Darurat</h4>
+              <p class="text-muted small mb-4">
+                Layanan cepat tanggap kejadian mendesak, kecelakaan, atau gangguan ketertiban di lingkungan Polije.
+              </p>
+              <a href="#kontak" class="link-arrow-hover">
+                <span>Hubungi Posko</span>
+                <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Featured Work (Alur Pelaporan & Pengambilan) -->
+    <section class="py-5 bg-white border-top border-bottom border-light" id="alur">
+      <div class="container py-lg-4">
+        <!-- Section Heading -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge-soft-primary mb-2">Standard Operating Procedure</span>
+          <h2 class="display-6 fw-bold text-navy">Alur Pelaporan & Pengambilan</h2>
+          <p class="text-muted mx-auto" style="max-width: 580px;">
+            Tiga tahapan resmi dan transparan untuk mengurus barang temuan atau klaim kehilangan di kampus.
+          </p>
+        </div>
+
+        <!-- 4 Steps Work Grid -->
+        <div class="row g-4">
+          <!-- Step 1 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-work-card">
+              <div class="step-card-visual">
+                <span class="step-pill-tag">Langkah 01</span>
+                <img src="img/alur-isi-formulir.webp" alt="Isi Formulir Online" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-4">
+                <h5 class="fw-bold text-navy mb-2">Isi Formulir Online</h5>
+                <p class="text-muted small mb-0">
+                  Laporkan rincian spesifik barang (warna, merk, ciri khas, dan lokasi terakhir) melalui portal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-work-card">
+              <div class="step-card-visual">
+                <span class="step-pill-tag">Langkah 02</span>
+                <img src="img/alur-klaim-barang.webp" alt="Verifikasi Fisik di Posko" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-4">
+                <h5 class="fw-bold text-navy mb-2">Verifikasi Fisik di Posko</h5>
+                <p class="text-muted small mb-0">
+                  Petugas satpam memvalidasi kesesuaian data laporan dengan barang yang tersimpan aman di pos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-work-card">
+              <div class="step-card-visual">
+                <span class="step-pill-tag">Langkah 03</span>
+                <img src="img/alur-verifikasi-posko.webp" alt="Klaim & Pengambilan" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-4">
+                <h5 class="fw-bold text-navy mb-2">Klaim & Pengambilan</h5>
+                <p class="text-muted small mb-0">
+                  Pemilik sah menunjukkan KTM/KTP dan bukti kepemilikan untuk serah terima barang secara resmi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="step-work-card">
+              <div class="step-card-visual">
+                <span class="step-pill-tag">Layanan 24/7</span>
+                <img src="img/alur-pemantauan-status.webp" alt="Pemantauan Status" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-4">
+                <h5 class="fw-bold text-navy mb-2">Pemantauan Status</h5>
+                <p class="text-muted small mb-0">
+                  Pantau perkembangan pencarian barang secara realtime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Realtime Security & Lost-Found Analytics Dashboard (Desain Beragam Sesuai Referensi) -->
+    <section class="py-5 bg-light-surface border-top border-bottom border-light" id="statistik">
+      <div class="container py-lg-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge-soft-primary mb-2">Transparansi Data &amp; Posko</span>
+          <h2 class="display-6 fw-bold text-navy">Statistik &amp; Distribusi Layanan Kampus</h2>
+          <p class="text-muted mx-auto" style="max-width: 620px;">
+            Rekapitulasi berkala penanganan barang hilang/temuan serta respon pengamanan terpadu di Politeknik Negeri
+            Jember.
+          </p>
+        </div>
+
+        <!-- Baris 1: 3 KPI Quick Metric Cards di atas -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="kpi-mini-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="kpi-tag-label">TOTAL LAPORAN MASUK</span>
+                <div class="kpi-icon-pill">
+                  <iconify-icon icon="lucide:clipboard-list"></iconify-icon>
+                </div>
+              </div>
+              <div class="d-flex align-items-baseline gap-2">
+                <span class="kpi-value-num counter-number" data-target="148">0</span>
+                <span class="kpi-value-unit">Laporan</span>
+              </div>
+              <div class="text-muted small mt-2 d-flex align-items-center gap-1">
+                <iconify-icon icon="lucide:clock" class="text-primary"></iconify-icon>
+                <span>Semester Gasal Aktif 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="kpi-mini-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="kpi-tag-label">BARANG DIAMANKAN POSKO</span>
+                <div class="kpi-icon-pill success">
+                  <iconify-icon icon="lucide:package-check"></iconify-icon>
+                </div>
+              </div>
+              <div class="d-flex align-items-baseline gap-2">
+                <span class="kpi-value-num counter-number" data-target="129">0</span>
+                <span class="kpi-value-unit">Item Fisik</span>
+              </div>
+              <div class="text-muted small mt-2 d-flex align-items-center gap-1">
+                <iconify-icon icon="lucide:shield-check" class="text-success"></iconify-icon>
+                <span>Tersimpan aman di Pos Satpam</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="kpi-mini-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="kpi-tag-label">POS SIAGA KEAMANAN</span>
+                <div class="kpi-icon-pill warning">
+                  <iconify-icon icon="lucide:shield-alert"></iconify-icon>
+                </div>
+              </div>
+              <div class="d-flex align-items-baseline gap-2">
+                <span class="kpi-value-num counter-number" data-target="6">0</span>
+                <span class="kpi-value-unit">Titik Posko</span>
+              </div>
+              <div class="text-muted small mt-2 d-flex align-items-center gap-1">
+                <iconify-icon icon="lucide:user-check" class="text-warning"></iconify-icon>
+                <span>Patroli 24 Jam non-stop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baris 2: Chart Batang Kiri & Donut/Progress Kanan (Persis Referensi Dashboard Desa Marga Mulya) -->
+        <div class="row g-4">
+          <!-- Kolom Kiri: Diagram Batang Kategori Barang Terbanyak -->
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-analytics-box h-100 d-flex flex-column">
+              <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                <div>
+                  <h5 class="fw-bold text-navy mb-1">Distribusi Jenis Barang Dilaporkan</h5>
+                  <p class="text-muted small mb-0">Frekuensi kategori barang yang sering tertinggal di area kampus</p>
+                </div>
+                <span class="badge-pill-tag-soft">Kategori Terbanyak</span>
+              </div>
+
+              <!-- Custom Visual CSS Bar Chart -->
+              <div class="chart-bars-container mt-auto pt-3" id="barChartContainer">
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-navy" data-height="82%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">62 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Elektronik</span>
+                </div>
+
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-navy-light" data-height="65%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">48 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Kunci Kontak</span>
+                </div>
+
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-cyan" data-height="48%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">34 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Dompet &amp; KTM</span>
+                </div>
+
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-amber" data-height="38%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">26 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Berkas / Buku</span>
+                </div>
+
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-slate" data-height="24%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">16 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Helm &amp; Jaket</span>
+                </div>
+
+                <div class="chart-bar-item">
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill bar-gray" data-height="15%" style="height: 0%;">
+                      <span class="chart-bar-tooltip">8 Item</span>
+                    </div>
+                  </div>
+                  <span class="chart-bar-name">Lain-lain</span>
+                </div>
+              </div>
+
+              <div class="border-top pt-3 mt-4 d-flex justify-content-between align-items-center text-muted small">
+                <span>* Data otomatis disinkronkan dengan buku induk Pos Satpam Kampus 1 &amp; 2</span>
+                <a href="#laporan" class="text-navy fw-semibold text-decoration-none">Cek Semua Barang &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Donut Chart Status & Progress Tingkat Pengembalian -->
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="d-flex flex-column gap-4 h-100">
+              <!-- Box Atas: Donut Chart Status Barang -->
+              <div class="stat-analytics-box">
+                <h5 class="fw-bold text-navy mb-1">Status Penanganan Barang</h5>
+                <p class="text-muted small mb-3">Persentase total 148 laporan semester ini</p>
+                
+                <div class="row align-items-center g-3">
+                  <div class="col-sm-5 text-center py-2">
+                    <div class="donut-chart-circle" id="donutChartCircle" style="background: conic-gradient(#e2e8f0 0% 100%);">
+                      <div class="donut-hole">
+                        <span class="donut-number counter-number" data-target="148">0</span>
+                        <span class="donut-sub">Total Item</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <ul class="donut-legend-list">
+                      <li>
+                        <span class="legend-dot color-success"></span>
+                        <span class="legend-text">Sudah Dikembalikan</span>
+                        <span class="legend-val">87%</span>
+                      </li>
+                      <li>
+                        <span class="legend-dot color-navy"></span>
+                        <span class="legend-text">Di Posko (Menunggu)</span>
+                        <span class="legend-val">10%</span>
+                      </li>
+                      <li>
+                        <span class="legend-dot color-amber"></span>
+                        <span class="legend-text">Proses Verifikasi</span>
+                        <span class="legend-val">3%</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Box Bawah: Progress Bar Tingkat Efektivitas Layanan -->
+              <div class="stat-analytics-box flex-grow-1">
+                <h5 class="fw-bold text-navy mb-1">Performa Respon &amp; Verifikasi</h5>
+                <p class="text-muted small mb-3">Standar kecepatan pelayanan pos satpam</p>
+
+                <div class="progress-metric-stack">
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between small fw-semibold mb-1">
+                      <span class="text-navy">Tingkat Pengembalian Sukses</span>
+                      <span class="fw-bold" style="color: #031735;">87% (129 barang)</span>
+                    </div>
+                    <div class="progress custom-progress-bar">
+                      <div class="progress-bar anim-progress" data-width="87%" style="width: 0%; background-color: #031735;"></div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between small fw-semibold mb-1">
+                      <span class="text-navy">Verifikasi Identitas Valid</span>
+                      <span class="fw-bold" style="color: #0284c7;">94%</span>
+                    </div>
+                    <div class="progress custom-progress-bar">
+                      <div class="progress-bar anim-progress" data-width="94%" style="width: 0%; background-color: #0284c7;"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-between small fw-semibold mb-1">
+                      <span class="text-navy">Respon Cepat Tanggap Posko</span>
+                      <span class="fw-bold" style="color: #38bdf8;">&lt; 15 Menit</span>
+                    </div>
+                    <div class="progress custom-progress-bar">
+                      <div class="progress-bar anim-progress" data-width="92%" style="width: 0%; background-color: #38bdf8;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Daftar Laporan Terkini (Interactive Search & Filter Grid) -->
+    <section class="py-5" id="laporan">
+      <div class="container py-lg-4">
+        <!-- Header and Search -->
+        <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
+          <div class="col-lg-7">
+            <span class="badge-soft-primary mb-2">Data Realtime</span>
+            <h2 class="display-6 fw-bold text-navy">Daftar Laporan Barang Kampus</h2>
+            <p class="text-muted mb-0">
+              Pantau laporan barang hilang yang dicari dan barang temuan yang diamankan di pos satpam.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="position-relative">
+              <iconify-icon icon="lucide:search" class="position-absolute text-muted fs-5"
+                style="left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;"></iconify-icon>
+              <input type="text" id="searchInput" class="form-control search-input-pill"
+                placeholder="Cari nama barang atau lokasi..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up">
+          <button class="filter-btn-pill active" data-filter="all">
+            Semua Laporan (4)
+          </button>
+          <button class="filter-btn-pill" data-filter="kehilangan">
+            <span class="badge bg-danger rounded-circle p-1 me-1"> </span>
+            Barang Hilang (Dicari)
+          </button>
+          <button class="filter-btn-pill" data-filter="temuan">
+            <span class="badge bg-success rounded-circle p-1 me-1"> </span>
+            Barang Temuan (Diamankan)
+          </button>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="row g-4" id="reportsGrid">
+          <!-- Item 1: Kehilangan Dompet Dunhill (Foto dompet-dunhill.webp) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
+            data-aos-delay="100">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="img/dompet-dunhill.webp" alt="Dompet Kulit Dunhill" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Dompet Kulit Dunhill</h5>
+                <p class="text-muted small mb-3">
+                  Dompet lipat kulit tekstur warna coklat tan merk Dunhill berisi KTM dan kartu penting.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Parkir Barat Kampus 1</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 08:30 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Dimas Farel</span>
+                  </div>
+                </div>
+                <a href="pages/DetailBarangHilang.html"
+                  class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Temuan Kunci Motor Honda + Gantungan (Foto kunci-honda.webp) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="200">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status found">Temuan Posko</span>
+                <img src="img/kunci-honda.webp" alt="Kunci Motor Honda Gantungan Patrick" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Kunci Motor Honda</h5>
+                <p class="text-muted small mb-3">
+                  Kunci kontak Honda beserta 2 gantungan karakter (Patrick Star &amp; Baby Shark).
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Gedung As-Salam Lantai 1</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 10:15 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:shield" class="meta-icon"></iconify-icon>
+                    <span>Diamankan: Pos Satpam 1</span>
+                  </div>
+                </div>
+                <a href="pages/detailBarangDitemukan.html"
+                  class="btn btn-action-card success-card w-100 mt-auto fw-semibold">
+                  <span>Klaim di Posko</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Temuan Mouse Olike Wireless Pink (Foto mouse-olike.webp) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="temuan" data-aos="fade-up" data-aos-delay="300">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status found">Temuan Posko</span>
+                <img src="img/mouse-olike.webp" alt="Mouse Wireless Olike Pink" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Mouse Olike Wireless</h5>
+                <p class="text-muted small mb-3">
+                  Mouse tanpa kabel merk Olike warna pink dengan tombol scroll oranye dan tombol DPI.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Ruang Kuliah TI Gedung A</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 11:45 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:shield" class="meta-icon"></iconify-icon>
+                    <span>Diamankan: Pos Satpam 2</span>
+                  </div>
+                </div>
+                <a href="pages/detailBarangDitemukan.html"
+                  class="btn btn-action-card success-card w-100 mt-auto fw-semibold">
+                  <span>Klaim di Posko</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Kehilangan Earphone Putih 3.5mm (Foto earphone-putih.webp) -->
+          <div class="col-md-6 col-lg-3 report-card-col" data-category="kehilangan" data-aos="fade-up"
+            data-aos-delay="400">
+            <div class="report-item-card">
+              <div class="item-visual-photo-wrap">
+                <span class="item-badge-status loss">Kehilangan</span>
+                <img src="img/earphone-putih.webp" alt="Earphone Kabel Putih 3.5mm" class="item-photo-img" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h5 class="fw-bold text-navy mb-2">Earphone Kabel Putih</h5>
+                <p class="text-muted small mb-3">
+                  Earphone in-ear kabel warna putih jack audio 3.5mm tertinggal di area laboratorium.
+                </p>
+                <div class="small text-muted mb-4 d-flex flex-column gap-2 item-meta-clean">
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:map-pin" class="meta-icon"></iconify-icon>
+                    <span>Lab Komputer Gedung TI</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:clock" class="meta-icon"></iconify-icon>
+                    <span>24 Okt 2026, 13:40 WIB</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="lucide:user" class="meta-icon"></iconify-icon>
+                    <span>Pelapor: Siti Nurhaliza</span>
+                  </div>
+                </div>
+                <a href="pages/DetailBarangHilang.html"
+                  class="btn btn-action-card danger-card w-100 mt-auto fw-semibold">
+                  <span>Lihat Detail Laporan</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7.5. Pengumuman & Info Lalu Lintas Kampus -->
+    <section class="py-5 bg-white border-top border-light" id="pengumuman">
+      <div class="container py-lg-4">
+        <div class="row align-items-end g-4 mb-4" data-aos="fade-up">
+          <div class="col-lg-8">
+            <span class="badge-soft-primary mb-2">Info Terkini Posko</span>
+            <h2 class="display-6 fw-bold text-navy">Pengumuman &amp; Akses Lalu Lintas Kampus</h2>
+            <p class="text-muted mb-0">
+              Informasi resmi terkait penutupan jalan, pengalihan parkir, dan rekayasa lalu lintas di area Politeknik Negeri Jember.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="pages/detailPengumuman.html" class="btn btn-sm rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2 text-decoration-none shadow-sm" style="background: #ffffff; color: #031735; border: 1.5px solid #031735;">
+              <span>Lihat Semua Pengumuman</span>
+              <iconify-icon icon="lucide:arrow-right" style="font-size: 1rem;"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Kiri (Besar / Headline): Gerbang Depan Wisuda -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
+              <!-- Foto Bukti Acara -->
+              <div class="position-relative" style="height: 200px;">
+                <img src="img/paraSatpam.webp" alt="Pengamanan Acara Wisuda Polije" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-3 p-lg-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small fw-semibold" style="color: #031735;">
+                      <iconify-icon icon="lucide:clock" class="me-1" style="color: #031735;"></iconify-icon> Hari Ini, 06:00 &ndash; 16:00 WIB
+                    </span>
+                  </div>
+                  <h5 class="fw-bold mb-2" style="line-height: 1.35;">
+                    <a href="pages/detailPengumuman.html?id=wisuda" class="text-decoration-none" style="color: #031735 !important;">
+                      Gerbang Masuk Utama Khusus Tamu &amp; Orang Tua Wisudawan
+                    </a>
+                  </h5>
+                  <p class="small mb-3" style="line-height: 1.6; font-size: 0.84rem; color: #475569;">
+                    Akses kendaraan melalui Gerbang Depan (Jl. Mastrip) ditutup sementara untuk kelancaran acara Wisuda Politeknik Negeri Jember. Mahasiswa &amp; civitas akademika dialihkan via rute alternatif.
+                  </p>
+                </div>
+
+                <div class="pt-3 border-top d-flex justify-content-end">
+                  <a href="pages/detailPengumuman.html?id=wisuda" class="btn btn-sm rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-1" style="font-size: 0.8rem; background: #031735; color: #ffffff; border: 1px solid #031735;">
+                    Baca Selengkapnya <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kanan (4 Kotak Berita: Grid 2x2 dengan Foto) -->
+          <div class="col-lg-6">
+            <div class="row g-3 h-100">
+
+              <!-- Card 1: Penutupan Jalan Gedung Teknik (Bazar) -->
+              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
+                  <div class="position-relative" style="height: 115px;">
+                    <img src="img/satpam-polije.webp" alt="Penutupan Jalan Gedung Teknik" class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.85rem; line-height: 1.35;">
+                        <a href="pages/detailPengumuman.html?id=bazar" class="text-decoration-none" style="color: #031735 !important;">
+                          Jalan Gedung Teknik Ditutup (Bazar)
+                        </a>
+                      </h6>
+                      <p class="mb-2" style="font-size: 0.75rem; line-height: 1.45; color: #475569;">Ruas jalan ditutup. Parkir dialihkan ke <strong>Gedung Pascasarjana</strong>.</p>
+                    </div>
+                    <div class="pt-2 border-top d-flex justify-content-end align-items-center">
+                      <a href="pages/detailPengumuman.html?id=bazar" class="fw-bold text-decoration-none d-inline-flex align-items-center gap-1" style="color: #031735 !important; font-size: 0.75rem;">
+                        Baca Selengkapnya <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Jaga Barangmu Saat Konser Inagurasi -->
+              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
+                  <div class="position-relative" style="height: 115px;">
+                    <img src="img/mencari-barang-2.webp" alt="Konser Inagurasi Polije" class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.85rem; line-height: 1.35;">
+                        <a href="pages/detailPengumuman.html?id=parkir" class="text-decoration-none" style="color: #031735 !important;">
+                          Jaga Barangmu Saat Konser Inagurasi
+                        </a>
+                      </h6>
+                      <p class="mb-2" style="font-size: 0.75rem; line-height: 1.45; color: #475569;">Waspada barang berharga di keramaian konser. Posko siaga 24 jam.</p>
+                    </div>
+                    <div class="pt-2 border-top d-flex justify-content-end align-items-center">
+                      <a href="pages/detailPengumuman.html?id=parkir" class="fw-bold text-decoration-none d-inline-flex align-items-center gap-1" style="color: #031735 !important; font-size: 0.75rem;">
+                        Baca Selengkapnya <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: CCTV Mati Gedung TI -->
+              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
+                  <div class="position-relative" style="height: 115px;">
+                    <img src="img/paraSatpam.webp" alt="CCTV Mati Gedung TI" class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.85rem; line-height: 1.35;">
+                        <a href="pages/detailPengumuman.html?id=cctv" class="text-decoration-none" style="color: #031735 !important;">
+                          CCTV Mati di Gedung Teknologi Informasi
+                        </a>
+                      </h6>
+                      <p class="mb-2" style="font-size: 0.75rem; line-height: 1.45; color: #475569;">Kamera pengawas Gedung TI nonaktif. Patroli satpam diperketat.</p>
+                    </div>
+                    <div class="pt-2 border-top d-flex justify-content-end align-items-center">
+                      <a href="pages/detailPengumuman.html?id=cctv" class="fw-bold text-decoration-none d-inline-flex align-items-center gap-1" style="color: #031735 !important; font-size: 0.75rem;">
+                        Baca Selengkapnya <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Razia Kendaraan Tanpa STNK -->
+              <div class="col-sm-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="announcement-card-mini h-100 p-0 overflow-hidden d-flex flex-column">
+                  <div class="position-relative" style="height: 115px;">
+                    <img src="img/earphone-putih.webp" alt="Razia Kendaraan" class="w-100 h-100 object-fit-cover" />
+                  </div>
+                  <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.85rem; line-height: 1.35;">
+                        <a href="pages/detailPengumuman.html?id=razia" class="text-decoration-none" style="color: #031735 !important;">
+                          Pemeriksaan Kelengkapan STNK
+                        </a>
+                      </h6>
+                      <p class="mb-2" style="font-size: 0.75rem; line-height: 1.45; color: #475569;">Pemeriksaan rutin kelengkapan surat berkendara di pos gerbang.</p>
+                    </div>
+                    <div class="pt-2 border-top d-flex justify-content-end align-items-center">
+                      <a href="pages/detailPengumuman.html?id=razia" class="fw-bold text-decoration-none d-inline-flex align-items-center gap-1" style="color: #031735 !important; font-size: 0.75rem;">
+                        Baca Selengkapnya <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Bottom CTA Card (Executive Contact Box Reference) -->
+    <section class="section-cta-executive" id="kontak">
+      <div class="container">
+        <div class="executive-cta-card" data-aos="zoom-in" data-aos-duration="900">
+          <div class="row align-items-center g-5">
+            <!-- Left Info -->
+            <div class="col-lg-6">
+              <span class="badge-glass-modern mb-3">Respon Cepat Tanggap</span>
+              <h3 class="display-6 fw-bold text-white mb-3">Butuh Bantuan Posko Segera?</h3>
+              <p class="text-light text-opacity-75 mb-4" style="line-height: 1.7;">
+                Hubungi petugas jaga keamanan kampus Politeknik Negeri Jember jika Anda mengalami
+                kehilangan darurat atau menemukan barang berharga di lingkungan kampus.
+              </p>
+
+              <!-- Direct Action Buttons (Darurat) -->
+              <div class="d-flex flex-wrap gap-3 mt-2">
+                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn-hero-solid" style="background: #ffffff; color: #031735 !important;">
+                  <iconify-icon icon="lucide:message-circle"></iconify-icon>
+                  <span>Chat WhatsApp Posko</span>
+                </a>
+                <a href="tel:+6281234567890" class="btn-hero-outline">
+                  <iconify-icon icon="lucide:phone-call" class="me-2"></iconify-icon>
+                  <span>Telepon Darurat 24 Jam</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Quick Form (Dynamic Mahasiswa vs Umum) -->
+            <div class="col-lg-6">
+              <form action="#" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-3 p-4 rounded-4"
+                style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                <!-- Toggle Status Pelapor -->
+                <div class="d-flex gap-2 p-1 rounded-pill" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1);">
+                  <button type="button" class="btn btn-sm rounded-pill flex-fill fw-semibold reporter-type-btn active" data-type="mahasiswa"
+                    style="background: #ffffff; color: #031735;">
+                    Mahasiswa / Civitas
+                  </button>
+                  <button type="button" class="btn btn-sm rounded-pill flex-fill fw-semibold reporter-type-btn" data-type="umum"
+                    style="background: transparent; color: #e2e8f0;">
+                    Tamu / Orang Luar
+                  </button>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-glass" placeholder="Nama Lengkap" required />
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" id="identityNumberInput" class="form-control form-control-glass" placeholder="NIM / NIP" required />
+                  </div>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <input type="tel" class="form-control form-control-glass" placeholder="No. WhatsApp / HP" required />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="identityPhotoInput" id="identityPhotoLabel" class="form-control form-control-glass d-flex align-items-center justify-content-between mb-0" style="cursor: pointer;">
+                      <span class="text-truncate small" id="identityPhotoText">Foto KTM / ID Pegawai</span>
+                      <iconify-icon icon="lucide:upload" class="text-info flex-shrink-0 ms-2"></iconify-icon>
+                    </label>
+                    <input type="file" id="identityPhotoInput" class="d-none" accept="image/*" required />
+                  </div>
+                </div>
+
+                <textarea class="form-control form-control-glass" rows="3"
+                  placeholder="Pesan atau Laporan Singkat Kejadian..." required></textarea>
+                <button type="submit" class="btn-modern-primary w-100 mt-1 py-3">
+                  <span>Kirim Laporan Cepat</span>
+                  <iconify-icon icon="lucide:send"></iconify-icon>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer Executive (Referensi Lengkap: 5 Kolom + Quote Card + Maps + Back to Top) -->
+  <footer class="footer-executive position-relative">
+    <!-- Floating Back to Top Button on Top-Right Curve -->
+    <a href="#beranda" class="footer-scroll-top-btn position-absolute" style="top: 24px; right: 36px; z-index: 10;" title="Kembali ke Atas" aria-label="Kembali ke Atas">
+      <iconify-icon icon="lucide:arrow-up"></iconify-icon>
+    </a>
+
+    <div class="container pt-5 pb-4">
+      <!-- Baris 1: 5 Kolom Navigasi & Info -->
+      <div class="row g-4 pb-5">
+        <!-- Kolom 1: Brand & Deskripsi -->
+        <div class="col-lg-3 col-md-6">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="img/logo-polije-siaga.webp" alt="Logo Polije Siaga" style="height: 44px; width: auto;" />
+            <div>
+              <h5 class="text-white fw-bold mb-0">Polije Siaga</h5>
+              <small class="fw-semibold" style="font-size: 0.75rem; color: #1a5380;">Pusat Keamanan Terpadu</small>
+            </div>
+          </div>
+          <p class="small text-light text-opacity-75 mb-0" style="line-height: 1.6;">
+            Sistem informasi keamanan dan pengelolaan barang hilang/temuan resmi Politeknik Negeri Jember yang transparan dan sigap 24 jam.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Jelajahi -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Jelajahi</h6>
+          <ul class="footer-nav-list">
+            <li><a href="#beranda"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Beranda</a></li>
+            <li><a href="#layanan"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Layanan</a></li>
+            <li><a href="#alur"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Alur Prosedur</a></li>
+            <li><a href="#kontak"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Kontak</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Informasi -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Informasi</h6>
+          <ul class="footer-nav-list">
+            <li><a href="#statistik"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Statistik</a></li>
+            <li><a href="#laporan"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Daftar Laporan</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Layanan Utama -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="text-white fw-bold mb-3">Layanan Utama</h6>
+          <ul class="footer-nav-list">
+            <li><a href="pages/barangHilang.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Lapor Hilang</a></li>
+            <li><a href="pages/barangTemukan.html"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Lapor Temuan</a></li>
+            <li><a href="#alur"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Verifikasi &amp; Klaim</a></li>
+            <li><a href="#kontak"><iconify-icon icon="lucide:chevron-right"></iconify-icon> Panggilan Darurat</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 5: Kontak Posko -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Kontak Posko</h6>
+          <ul class="footer-contact-list">
+            <li>
+              <iconify-icon icon="lucide:map-pin"></iconify-icon>
+              <span>Jl. Mastrip PO Box 164, Sumbersari, Jember</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:phone"></iconify-icon>
+              <span>+62 812-3456-7890</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:mail"></iconify-icon>
+              <span>security@polije.ac.id</span>
+            </li>
+            <li>
+              <iconify-icon icon="lucide:clock"></iconify-icon>
+              <span>Siaga 24 Jam Non-Stop</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Copyright -->
+    <div class="footer-bottom-bar">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="small text-light text-opacity-50 mb-0">
+            &copy; 2026 Politeknik Negeri Jember &bull; Polije Siaga
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- AOS JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Interactive Custom Script -->
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic'
+    });
+
+    // Navbar Solid Background on Scroll (Tanpa Mengubah Ukuran Padding)
+    const navbar = document.querySelector('.custom-navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Live Search & Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn-pill');
+    const reportCards = document.querySelectorAll('.report-card-col');
+    const searchInput = document.getElementById('searchInput');
+
+    function filterReports() {
+      const activeFilterBtn = document.querySelector('.filter-btn-pill.active');
+      const filterCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+      const searchQuery = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+      reportCards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardText = card.innerText.toLowerCase();
+
+        const matchesCategory = (filterCategory === 'all' || cardCategory === filterCategory);
+        const matchesSearch = (searchQuery === '' || cardText.includes(searchQuery));
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = '';
         } else {
-          header.classList.remove("scrolled");
+          card.style.display = 'none';
         }
       });
+    }
 
-      const navLinks = document.querySelectorAll("nav ul li a");
-      const sections = document.querySelectorAll("main section");
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterReports();
+      });
+    });
 
-      const navLayanan = document.querySelector(".nav-layanan");
-      const layananToggle = document.querySelector(".layanan-toggle");
-      const layananPopUp = document.querySelector(".layanan-keamanan-pop-up");
+    if (searchInput) {
+      searchInput.addEventListener('input', filterReports);
+    }
 
-      if (layananToggle && layananPopUp) {
-        layananToggle.addEventListener("click", function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          layananPopUp.classList.toggle("show");
-          if (navLayanan) {
-            navLayanan.classList.toggle("show");
+      // Helper: Animate a single counter element
+      function animateCounter(counter, duration = 1600) {
+        const target = +counter.getAttribute('data-target');
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.innerText = target;
+            clearInterval(timer);
+          } else {
+            counter.innerText = Math.floor(current);
+          }
+        }, stepTime);
+      }
+
+      // 1. Hero Bottom Pill Counters: Langsung jalan saat halaman dibuka
+      window.addEventListener('load', () => {
+        document.querySelectorAll('.hero-bottom-pill-card .counter-number').forEach((c) => {
+          animateCounter(c, 1400);
+        });
+      });
+
+      // 2. Smooth Animated Counter, Bars & Donut Chart on Scroll for Statistics (#statistik)
+      let animatedCounters = false;
+      function runCounters() {
+        const statSection = document.getElementById('statistik');
+        if (!statSection || animatedCounters) return;
+
+        const rect = statSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.85) {
+          animatedCounters = true;
+
+          // Numbers Counting Up Animation inside #statistik
+          statSection.querySelectorAll('.counter-number').forEach((counter) => {
+            animateCounter(counter, 1600);
+          });
+
+          // 2. Bar Chart Dynamic Growth Animation (from 0% height to data-height)
+          const barFills = document.querySelectorAll('.chart-bar-fill');
+          barFills.forEach((bar, index) => {
+            const targetHeight = bar.getAttribute('data-height');
+            setTimeout(() => {
+              bar.style.height = targetHeight;
+            }, index * 120); // staggered delay
+          });
+
+          // 3. Donut Chart Circular Color Sweep Animation (from gray to conic gradient)
+          const donut = document.getElementById('donutChartCircle');
+          if (donut) {
+            let startDegree = 0;
+            const targetNavy1 = 87; // 87%
+            const targetNavy2 = 97;  // 97%
+            const targetNavy3 = 100;// 100%
+            
+            let currentProgress = 0;
+            const donutDuration = 1600;
+            const donutSteps = 50;
+            const stepIncrement = 1 / donutSteps;
+            let step = 0;
+
+            const donutTimer = setInterval(() => {
+              step++;
+              // Easing out cubic
+              const progress = 1 - Math.pow(1 - (step / donutSteps), 3);
+              const curN1 = (targetNavy1 * progress).toFixed(1);
+              const curN2 = ((targetNavy1 * progress) + (10 * progress)).toFixed(1);
+              const curN3 = ((targetNavy2 * progress) + (3 * progress)).toFixed(1);
+
+              donut.style.background = `conic-gradient(
+                #031735 0% ${curN1}%,
+                #0284c7 ${curN1}% ${curN2}%,
+                #38bdf8 ${curN2}% ${curN3}%,
+                #e2e8f0 ${curN3}% 100%
+              )`;
+
+              if (step >= donutSteps) {
+                clearInterval(donutTimer);
+                donut.style.background = `conic-gradient(
+                  #031735 0% 87%,
+                  #0284c7 87% 97%,
+                  #38bdf8 97% 100%
+                )`;
+              }
+            }, donutDuration / donutSteps);
+          }
+
+          // 4. Progress Bars Width Animation
+          const progressBars = document.querySelectorAll('.anim-progress');
+          progressBars.forEach((pBar, index) => {
+            const targetWidth = pBar.getAttribute('data-width');
+            setTimeout(() => {
+              pBar.style.width = targetWidth;
+            }, index * 150 + 200);
+          });
+        }
+      }
+
+      window.addEventListener('scroll', runCounters);
+      window.addEventListener('load', runCounters);
+      // Panggil juga sekali saat script dieksekusi jika posisi scroll sudah di tengah/bawah
+      setTimeout(runCounters, 300);
+
+      // Toggle Form Pelapor (Mahasiswa vs Tamu/Orang Luar)
+      const reporterBtns = document.querySelectorAll('.reporter-type-btn');
+      const identityNumberInput = document.getElementById('identityNumberInput');
+      const identityPhotoText = document.getElementById('identityPhotoText');
+      const identityPhotoInput = document.getElementById('identityPhotoInput');
+      let currentReporterType = 'mahasiswa';
+
+      reporterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          reporterBtns.forEach((b) => {
+            b.classList.remove('active');
+            b.style.background = 'transparent';
+            b.style.color = '#e2e8f0';
+          });
+          btn.classList.add('active');
+          btn.style.background = '#ffffff';
+          btn.style.color = '#031735';
+
+          currentReporterType = btn.getAttribute('data-type');
+          if (currentReporterType === 'mahasiswa') {
+            identityNumberInput.placeholder = 'NIM / NIP';
+            if (!identityPhotoInput.files.length) {
+              identityPhotoText.textContent = 'Foto KTM / ID Pegawai';
+            }
+          } else {
+            identityNumberInput.placeholder = 'NIK (No. KTP)';
+            if (!identityPhotoInput.files.length) {
+              identityPhotoText.textContent = 'Upload Foto KTP';
+            }
           }
         });
+      });
 
-        document.addEventListener("click", function (event) {
-          if (!layananPopUp.contains(event.target) && !layananToggle.contains(event.target)) {
-            layananPopUp.classList.remove("show");
-            if (navLayanan) {
-              navLayanan.classList.remove("show");
-            }
+      if (identityPhotoInput) {
+        identityPhotoInput.addEventListener('change', () => {
+          if (identityPhotoInput.files.length > 0) {
+            identityPhotoText.textContent = identityPhotoInput.files[0].name;
+          } else {
+            identityPhotoText.textContent = currentReporterType === 'mahasiswa' ? 'Foto KTM / ID Pegawai' : 'Upload Foto KTP';
           }
         });
       }
     </script>
-  </body>
+</body>
+
 </html>
